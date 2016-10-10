@@ -97,3 +97,38 @@ k 玻耳兹曼常量 为P与 $N_A$ 的比值 $k=1.38*10^{-23}J/K$
 \[E=\frac{m}{M}\frac{i}{2}RT\]
 一定量的理想气体的内能完全取决于分子运动的自由度i和气体热力学温标T 而与气体的体积和压强无关 理想气体的内能只是温度的单值函数
 ## 8-5 麦克斯韦速率的分布律
+### 速率分布函数
+\[\frac{dN}{N}=f(v)dv\]
+f(v)既是分布函数 表示速率分布在v附近单位速率间隔内的分子的百分率  
+### 麦克斯韦速率分布律
+#### 麦克斯韦速率分布函数
+\[f(v)=4\pi\left(\frac{m_0}{2\pi{kT}}\right)^{3/2}e^{-\frac{m_0v^2}{2kT}}v^2\]
+#### 最概然速率 $v_p$
+在一定温度下 速率大小与 $v_p$ 相近的气体分子的百分率为最大
+#### 平均速率 $\overline{v}$
+分子速率的算术平均值Youtube https://youtu.be/ANWzJ19yEuY 视频为台湾省官方中文预告片。
+另外最新消息：电影《你的名字》国内确定引进，引进方：光线传媒彩条屋影业，上映时间：应该是年内
+“电影：《你的名字》大陆地区”官方微博：http://www.weibo.com/u/6033327972
+视频原作者：傳影互動
+搬运：你的名字吧
+### 分子速率的三个统计值
+#### 平均速率 $\overline{v}$
+\[\overline{v}=\sqrt{\frac{8kT}{\pi{m}}}=\sqrt{\frac{8RT}{\pi{M}}}\approx1.60\sqrt{\frac{RT}{M}}\]
+#### 方均根速率 $\sqrt{\overline{v^2}}$
+\[\sqrt{\overline{v^2}}=\sqrt{\frac{3kT}{m}}=\sqrt{\frac{3RT}{M}}\approx1.73\sqrt{\frac{RT}{M}}\]
+#### 最概然速率 $v_p$
+\[v_p=\sqrt{\frac{1}{b}}=\sqrt{\frac{2kT}{m}}=\sqrt{\frac{2RT}{M}}\approx1.41\sqrt{\frac{RT}{M}}\]
+当温度升高的时候 三者都按照 $T^{1/2}$ 增加 这三种速率就不同问题有这各自的应用  
+讨论速率分布时 用大量分子的最概然速率  
+计算分子运动的平均距离时 用平均速率  
+计算分子的平均平动动能时 用方均根速率
+## 8-7 分子碰撞和平均自由程
+### 分子碰撞的研究
+#### 平均碰撞频率
+1s内一个分子和其他分子碰撞的平均次数 简称碰撞频率 以 $\overline{Z}$ 表示
+#### 平均自由程
+每两次连续碰撞见一个分子自由运动的平均路程 以 $\overline{\lambda}$ 表示
+### 平均自由程公式
+\[\overline{\lambda}=\frac{\overline{v}}{\overline{Z}}=\frac{1}{\sqrt{2}\pi{d^2n}}\]
+\[\overline{\lambda}=\frac{kT}{\sqrt{2}\pi{d^2p}}\]
+温度一定时 $\overline{\lambda}$ 与p成反比 压强愈小 平均自由程愈长
