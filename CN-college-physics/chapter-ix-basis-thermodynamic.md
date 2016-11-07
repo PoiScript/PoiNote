@@ -75,9 +75,69 @@ Q=E_2+E_1+\int^{V_2}_{V_1}pdV
   (3) 此定律只要求系统的初、末状态是平衡态，至于过程中经历的各状态则不一定是平衡态。
   (4) 适用于任何系统（气、液、固）。
 热力学第一定律反映了系统对外作功必须从外界吸收热量或者减少系统内能，即第一类永动机不可能实现.
-9.2 热力学第一定律对理想气体等值过程的应用
-一. 理想气体的摩尔热容C_V 、C_p
-1. 定体摩尔热容C_V  和定压摩尔热容C_p 定义
-摩尔热容 C_x=\frac^{1}_{v}\imt_{\DeltaT=>}
-定体摩尔热容
-定压摩尔热容
+##II.热力学第一定律对理想气体等值过程的应用
+###i.理想气体的摩尔热容 $C_V,C_p$
+\[dQ=dE+pdV\]
+####1. 定体摩尔热容 $C_V$ 和定压摩尔热容 $C_P$ 定义
+#####摩尔热容
+\[C_x=\frac{1}{v}\lim_{\Delta{T}\to0}\frac{\Delta{Q}}{\Delta{T}}=\frac1{v}\frac{dQ}{dT}\]
+#####定体摩尔热容
+\[C_V=\frac{1}{v}(\frac{dQ}{sT})_V=\frac{1}{V}(\frac{dQ}{dT})_V=\frac{1}{v}(\frac{dE}{dT})\]
+#####定压摩尔热容
+\[C_P=\frac{1}{v}(\frac{dQ}{sT})_P=\frac{1}{v}[(\frac{dE}{dT})_P+p(\frac{dV}{dT})_P]=C_V+\frac{1}{v}p(\frac{dV}{dT})_P\]
+####2. $C_V$ 和 $C_P$ 的关系
+**理想气体的状态方程为 $pV=vRT$**
+\[C_P=C_V+\frac{1}{v}p(\frac{dV}{dT})_p\]
+#####迈耶公式(Mayer Formula)
+压强不变时，将状态方程两边对 T 求导，有
+\[\frac{1}{v}p(\frac{dV}{dT})_p=R\to C_p=C_V+R\]
+等压过程中, **1mol** 理想气体温度升高 **1k** 吸收的热量比等体过程中吸收的热量多 **8.31J**
+#####比热容比
+\[\frac{C_p}{C_V}=\gamma\]
+一般问题涉及的温度范围内，$C_p,C_V,\gamma$ 近似为常量
+####3. $C_V,C_P$ 的表示式
+因理想气体内能为
+\[E=v\frac{i}2RT\therefore{C_v}=\frac{i}2R,C_P=\frac{i+2}2R\]
+1. 单原子分子: $C_V = \frac32R\to\gamma=1.67$
+1. 双原子: $C_V=\frac52R\to\gamma=1.40$
+1. 多原子: $C_V=3R\to\gamma=1.33$
+####4. 理想气体内能的计算
+\[dE=vC_VdT,E_2-E_1=\int^{T_2}_{T_1}vC_VdT\]
+上式不仅适用于等体过程，对于理想气体，在其他过程（等压、绝热）中内能变化仍然可以用这个公式。<br>
+因为理想气体的内能仅仅是温度的函数，与体积无关。温度相同、体积不同的各状态，其内能都相同。
+###ii.等体过程(isochric process)
+\[dQ=dE+pdV,dE=vC_VdT\]
+1. 特点 V = constant
+1. 过程方程 P/T = constant
+1. 能量转换关系
+\[A=0\]
+\[Q=\Delta E=v\int^{T_2}_{T_1}C_VdT=vC_V(T_2-T_1)=v\frac{i}2R(T_2-T_1)\]
+气体吸收的热量，全部用来增加它的内能，使其温度上升。
+###iii.等压过程(isobaric process)
+1. 特点 P = constant
+1. 过程方程 V/T = constant
+1. 能量转换关系
+\[A=\int{V_2}{V_1}pdV=p(V_2-V_1)=vR(T_2-T_1)\]
+\[\Delta{E}=\int^{T_2}_{T_1}vC_VdT=vC_V(T_2-T_2)\]
+\[Q=v\int^{T_2}_{T_1}C_PdT=vC_P(T_2-T_1)\]
+理想气体吸收的a热量，一部分用来对外作功，其余部分则用来增加其内能。
+###iv.等温过程(isothermal process)
+1. 特点 T = constant
+1. 过程方程 PV = constant
+1. 能量转换关系
+\[\Delta{E}=0\]
+\[A=\int^{V_2}_{V_1}pdV=\int^{V_2}_{V_1}\frac{vRT}VdV\]
+\[=vRT\ln\frac{V_2}{V_1}=vRT\ln\frac{p_1}{p_2}\]
+\[Q=A\]
+等温膨胀，吸收的热量全部用来对外作功；<br>
+等温压缩，外界对气体作功,都转化为气体向外界放出的热量。
+###v.各种典型等值过程的对比
+过程|过程方程式|系统对外作功|系统吸收的热量|内能的增加|摩尔热容量
+:--:|:--:|:--:|:--:|:--:|:--:|:--:
+等体|$V_2=V_1\\\frac{T_2}{T_1}=\frac{P_2}{P_1}$|0|$vC_V(T_2-T_1)$|$vC_V(T_2-T_1)$|$C_V=\frac{R}{\gamma-1}$
+等压|$P_2=P_1\\\frac{T_2}{T_1}=\frac{V_2}{V_1}$|$P(V_2-V_1)\\vR(T_2-T_1)$|$vC_P(T_2-T_1)$|$vC_V(T_2-T_1)$|$C_P=\frac{\gamma R}{\gamma-1}$
+等温|$T_2=T_1\\\frac{V_1}{V_2}=\frac{P_2}{P_1}$|$P_1V_1\ln{\frac{V_2}{V_1}}\\vPV\ln{\frac{V_2}{V_1}}$|$P_1V_1\ln{\frac{V_2}{V_1}}\\vPV\ln{\frac{V_2}{V_1}}$|0|无穷大
+注意:
+1. 热力学第一定律 $dQ=dE+pdV$
+2. 焦耳定律 $dE=vC_VdT$  内能计算
+3. 状态方程 $PV=vRT$ 考虑具体过程
