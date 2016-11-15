@@ -152,5 +152,35 @@ $\displaystyle\frac1{(s+1+j)(s+1-j)}$|(-1,1)(-1,-1)|$\sin(t)e^{-t}u(t)$
 $\displaystyle\frac1{(s+j)(s-j)}$|(0,1)(0,-1)|$\sin(t)u(t)$
 $\displaystyle\frac1{(s-1+j)(s-1-j)}$|(1,1)(1,-1)|$\sin(t)e^tu(t)$
 ###iii.零极点与系统频响特性
-###连续系统的稳定性
+频响特性是指系统在正弦信号激励之下稳态响应随信号频率的变化情况。
+
+系统稳定时，令 $H(s)$ 中 $s =jω$，则得系统 **频响特性**
+\[H(j\omega)=H(s)\quad{}H(j\omega)=|H(j\omega)|\phi(\omega)\]
+####系统频响特性
+对于零极增益表示的系统函数
+\[H(s)=K\frac{\displaystyle\prod^m_{j=1}(s-z_j)}{\displaystyle\prod^n_{i=1}(s-p_i)}\]
+当系统稳定时，令 $s=jω$，则得
+\[H(j\omega)=K\frac{\displaystyle\prod^m_{j=1}(j\omega-z_j)}{\displaystyle\prod^n_{i=1}(j\omega-p_i)}\]
+###iv.连续系统的稳定性
+连续时间 **LTI系统 BIBO稳定** 的充分必要条件是:
+\[\int^{\infty}_{-\infty}|h(t)|dt=S<\infty\]
+若 $H(s)$ 的极点全部在左半平面，则 $h(t)$ 是按指数规律衰减的因果函数， $h(t)$ 是绝对可积的，所以 $H(s)$ 对应的系统也是 **稳定系统**，其逆也成立。
 ##IV.连续时间系统的模拟
+###i.系统的基本联接
+####1.系统的级联
+\[F(s)\to{}H_1(s)\xrightarrow{X(s)}H_2(s)\to{}Y(s)\Rightarrow{}F(s)\to{}H_1(s)H_2(s)\to{}Y(s)\]
+####2.系统的并联
+\[F(s)\to\left\{\begin{aligned}H_1\\H_2\end{aligned}\right.\
+\left.\begin{array}\\(s)\\(s)\end{array}\right\}=Y(s)\Rightarrow{}F(s)\to{}H_1(s)+H_2(s)\to{}Y(s)\]
+####3.反馈环路
+###ii.连续系统的模拟框图
+####1.直接型结构
+
+####2.级联型结构
+将系统函数分解为 **一阶或二阶相乘的形式**
+\[H(s)=H_1(s)H_2(s)\cdots{}H_n(s)\]
+画出每个子系统直接型模拟流图，然后将各子系统级联。
+####3.并联型结构
+将系统函数分解为 **一阶或二阶相加的形式**
+\[H(s)=H_1(s)+H_2(s)+\cdots{}+H_n(s)\]
+画出每个子系统直接型模拟流图, 然后将各子系统并联。
