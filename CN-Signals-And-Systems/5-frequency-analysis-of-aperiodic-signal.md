@@ -60,11 +60,74 @@ C_n=\frac{F(j\omega)}{T_0}\mid_{\omega=n\omega_0}\]
 符号函数定义:
 \[sgn(t)=\begin{cases}-1,t<0\\0,t=0\\1,t>0\end{cases}\]
 \[\mathscr{F}\Big[sgn(t)e^{-\sigma|t|}\Big]=\int^0_{-\infty}(-1)e^{at}\]
-####6.单位阶跃信号u(t)
+####6.单位阶跃信号 $u(t)$
+\[u(t)=\frac12+\frac1{j\omega}sgn(t)\]
+\[\mathscr{F}[u(t)]=\pi\delta(\omega)+\frac1{j\omega}\]
 ###ii.常见周期信号的频谱密度
-####1.虚指数信号
+####1.虚指数信号 $e^{j\omega_0t}(-\infty<t<\infty)$
+\[\mathscr{F}[e^{j\omega_0t}]=\int^\infty_{-\infty}e^{-j(\omega-\omega_0)t}dt=2\pi\delta(\omega-\omega_0)\]
+虚指数信号的频谱只有在 $\omega=\omega_0$ 处有一个冲激, 故称虚指数信号为 **单频信号**
 ####2.正弦型信号
-####3.单位冲激串
+\[\cos\omega_0t=\frac12(e^{j\omega_0t}+e^{-j\omega_0t})\xrightarrow{\mathscr{F}}\pi[\delta(\omega-\omega_0)+\delta(\omega+\omega_0)]\]
+\[\sin\omega_0t=\frac1{2j}(e^{j\omega_0t}-e^{-j\omega_0t})\xrightarrow{\mathscr{F}}-j\pi[\delta(\omega-\omega_0)+\delta(\omega+\omega_0)]\]
+####3.一般周期信号
+\[f(t)=\sum^\infty_{n=-\infty}C_ne^{jn\omega_0t},\omega=\frac{2\pi}{T_0}\\两边进行Fourier变换\to
+F(j\omega)=\mathscr{F}[\sum^{+\infty}_{n=-\infty}C_ne^{jn\omega_0t}]=\sum^{+\infty}_{n=-\infty}C_n\mathscr{F}[e^{jn\omega_0t}]\\
+F(j\omega)=2\pi\sum^{+\infty}_{n=-\infty}C_n\delta(\omega-n\omega_0)\]
+####4.单位冲激串 $\delta_{T_0}(t)$
+定义:
+\[\delta_{T_0}(t)=\sum^{+\infty}_{n=-\infty}\delta(t-nT_0),n\in Z\]
+\[\delta_{T_0}=\sum^{+\infty}_{n=-\infty}\delta(t-nT_0)=\frac1{T_0}\sum^{+\infty}_{n=-\infty}e^{jn\omega_0t},\omega_0=2\pi/T_0\\两边进行Fourier变换\to F(j\omega)=\frac1{T_0}\sum^{+\infty}_{n=-\infty}2\pi\delta(\omega-n\omega_0)=\omega_0\sum^{+\infty}_{n=-\infty}\delta(\omega-n\omega_0)\]
 ##III.连续时间Fourier变换的性质
+###i.线性特性
+\[f_1(t)=\xrightarrow{\mathscr{F}}F_1(j\omega),f_2(t)=\xrightarrow{\mathscr{F}}F_2(j\omega)\\\Rightarrow{}af_1(t)+bf_2(t)\xrightarrow{\mathscr{F}}aF_1(j\omega)+bF_2(j\omega)\]
+###ii.共轭对称特性
+\[f(t)=\xrightarrow{\mathscr{F}}F(j\omega)\\\Rightarrow{}f^* (t)\xrightarrow{\mathscr{F}}F^* (-j\omega)\quad f^* (-t)\xrightarrow{\mathscr{F}}F^* (j\omega)\]
+###iii.对称互易特性
+\[f(t)=\xrightarrow{\mathscr{F}}F(j\omega)\\\Rightarrow{}F(jt)\xrightarrow{\mathscr{F}}2\pi{}f(-\omega)\]
+对称互易特性表明信号的时域波形与其频谱函数具有对称互易关系,从Fourier正反变换的公式也可以发现他们的差别就是幅度相差 $2\pi$ 且积分项内差一个负号
+###iv.展缩特性
+\[f(t)=\xrightarrow{\mathscr{F}}F(j\omega)\\\Rightarrow{}f(at)\xrightarrow{\mathscr{F}}\frac1{|a|}F(j\frac\omega{a})\]
+时域波形的压缩(|a|>1),则对应其频谱函数扩展,反之则压缩 由此可见,信号的持续时间与其有效带宽成反比 在通信技术中,常需要增加通信速度,这就要求相应的扩展通讯设备的有效带宽
+###v.时移特性
+\[f(t)=\xrightarrow{\mathscr{F}}F(j\omega)\\\Rightarrow{}f(t-t_0)\xrightarrow{\mathscr{F}}F(j\omega)e^{-j\omega t_0}\]
+信号在时域中的 **时移**，对应频谱函数在频域中产生的 **附加相移**，而 **幅度频谱保持不变**。
+###vi.频移特性(调制定理)
+\[f(t)=\xrightarrow{\mathscr{F}}F(j\omega)\\\Rightarrow{}f(t)e^{j\omega_0t}\xrightarrow{\mathscr{F}}F(j(\omega-\omega_0))\]
+信号号在时域的时移,对应频谱函数在频域的频移
+\[\mathscr{F}[f(t)\cos\omega_0t]=\frac12\mathscr{F}[f(t)e^{j\omega_0t}]+\frac12\mathscr{F}[f(t)e^{-j\omega_0t}]=\frac12\mathscr{F}[j(\omega-\omega_0)]+\frac12\mathscr{F}[j(\omega+\omega_0)]\]
+信号 $f(t)$ 与余弦信号 $\cos\omega_0t$ 相乘后，其频谱是将原来信号频谱向左右搬移 $ω_0$，幅度减半。
+###vii.时域卷积特性
+\[f_1(t)\xrightarrow{\mathscr{F}}F_1(j\omega),f_2(t)=\xrightarrow{\mathscr{F}}F_2(j\omega)\\\Rightarrow{}f_1(t)* f_2(t)\xrightarrow{\mathscr{F}}F_1(j\omega)F_2(j\omega)\]
+Fourier变换可以将时域的卷积运算转换成频域中的乘法运算
+###iix.频域卷积特性
+\[f_1(t)\xrightarrow{\mathscr{F}}F_1(j\omega),f_2(t)=\xrightarrow{\mathscr{F}}F_2(j\omega)\\\Rightarrow{}f_1(t)f_2(t)\xrightarrow{\mathscr{F}}\frac1{2\pi}[F_1(j\omega)* F_2(j\omega)]\]
+两信号在时域的乘积运算,可以转换为两信号在频谱的卷积运算
+###ix.时域微分特性
+\[f(t)\xrightarrow{\mathscr{F}}F(j\omega)\\\Rightarrow{}f(t)'\xrightarrow{\mathscr{F}}(j\omega)F(j\omega)\quad f^{(n)}\xrightarrow{\mathscr{F}}(j\omega)^{(n)}F(j\omega)\]
+####修正的时域微分特性
+\[f(t)\xrightarrow{\mathscr{F}}F(j\omega)\quad f(t)'\xrightarrow{\mathscr{F}}F_1(j\omega)\\\Rightarrow{}F(j\omega)=\pi(f(\infty)+f(-\infty))\delta(\omega)+\frac{F_1(j\omega)}{j\omega}\]
+###x.积分特性
+\[f(t)\xrightarrow{\mathscr{F}}F(j\omega)\\\Rightarrow{}\int^t_{-\infty}f(\tau)d\tau\xrightarrow{\mathscr{F}}\frac1{j\omega}F(j\omega)+\pi F(0)\delta(\omega)\]
+###xi.频域微分特性
+\[f(t)\xrightarrow{\mathscr{F}}F(j\omega)\\\Rightarrow{}tf(t)\xrightarrow{\mathscr{F}}j\frac{dF(j\omega)}{d\omega}\]
+###xii.能量定理(Parseval定理)
+\[f(t)\xrightarrow{\mathscr{F}}F(j\omega)\\\Rightarrow{}E_f=\int^\infty_{-\infty}|f(t)|^2dt=\frac1{2\pi}\int^\infty_{-\infty}|F(j\omega)|^2d\omega\]
+非周期能量信号不但可以从信号的时域描述 $f(t)$ 进行计算, 也可以从信号的频域描述 $F(j\omega)$ 进行计算(由 $|F(jω)|^2$ 在整个频率范围的积分乘以 $1/2π$ 来计算)
+
+物理意义：非周期能量信号的归一化能量在 **时域中与在频域** 中相等，保持 **能量守恒**。
+
+定义单位角频率的信号能量为 **能量频谱密度函数**，简称 **能量谱** $G(j\omega)$。
+\[G(j\omega)=\frac1{2\pi}|F(j\omega)|^2\]
+可见,信号的能量谱 $G(j\omega)$ 是 $\omega$ 的偶函数, 它只决定与频谱函数的幅度特性,而与相位特性无关
+##非周期信号的频域分析小结
+* 重要概念: **非周期信号的频谱**
+  1. 非周期信号的频谱与周期信号的频谱的区别
+  1. 非周期信号 **频谱的物理意义**
+  1. 非周期信号频谱的分析方法: 应用 **常用基本信号的频谱** 与 **傅里叶变换的性质**
+* 分析问题使用的数学工具: **傅里叶变换**
+* 工程应用: 调制 解调 频分复用
 ##IV.离散周期信号的频域分析
+//TBD
 ##V.离散非周期信号的频域分析
+//TBD
