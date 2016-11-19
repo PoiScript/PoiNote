@@ -78,3 +78,65 @@ The best notion for input size **depends on the problem being studied**.For many
 The running time of an algorithm on a particular input is **the number of primitive operations or “steps” executed**. One line may take a different amount of time than another line, but we shall assume that each execution of the **ith line takes time $c_i$**, where **$c_i$ is a constant**. This viewpoint is in keeping with the RAM model, and it also reflects how the pseudocode would be **implemented on most actual computers**.
 ####Analysis of insertion sort
 For each `j = 2; 3; ... ; n`, where `n = A.length`, we let **$t_j$** denote **the number of times the while loop test** in line 5 is executed for that value of `j` .  When a `for` or `while` loop exits in the usual way (i.e., due to the test in the loop header), the test is executed **one time more** than the loop body.
+\[\begin{array}{clcc}
+n & INSERTION-SORT(A) & cost & times
+\\1&\text{for}j=2\text{to} A.length&c_1&n
+\\2&\quad key=A[j]&c_2&n-1
+\\3&\quad //\text{Insert A[j] to the sorted sequence A[1 .. j-1]}&0&n-1
+\\4&\quad i=j-1&c_4&n-1
+\\5&\quad\text{while}i>0\,and\,A[i] > key&c_5&\sum^n_{j=2}t_j
+\\6&\quad\quad A[i+1]=A[i]&c_6&\sum^n_{j=2}(t_j)
+\\7&\quad\quad i=i-1&c_7&\sum^n_{j=2}(t_j-1)
+\\8&\quad A[i+1]=key&c_8&n-1
+\end{array}\]
+Even for inputs of a given size, an algorithm’s running time may depend on **which input of that size** is given.
+\[T(n)=c_1n+c_2(n-1)+c_4(n-1)+c_5+\sum^n_{j=2}t_j+c_6\sum^n_{j=2}(t_j-1)+c_7\sum^n_{j=2}(t_j-1)+c_8(n-1)\]
+######The best-case running time is
+\[T(n)=c_1n+c_2(n-1)+c_4(n-1)+c_5(n-1)+c_8(n-1)=\\(c_1+c_2+c_4+c_5+c_8)n-(c_2+c_4+c_5+c_8)\]
+We can express this running time as `an + b` for constants `a` and `b` that depend on the statement costs $c_i$; it is thus a **linear function** of n.
+######The worst case
+\[T(n)=c_1n+c_2(n-1)+c_4(n-1)+c_5\Big(\frac{n(n+1)}2-1\Big)+c_6\Big(\frac{n(n-1)}2\Big)+c_7\Big(\frac{n(n-1)}2\Big)+c_8(n-1)\\=(\frac{c_5}2+\frac{c_6}2+\frac{c_7}2)n^2+(c_1+c_2+c_4+\frac{c_5}2-\frac{c_6}2-\frac{c_7}2+c_8)n-(c_2+c_4+c_5+c_8)\]
+We can express this worst-case running time as $an^2+bn+c$ for constants `a`, `b`, and `c` that again depend on the statement costs $c_i$; it is thus a **quadratic function** of n.
+####Worst-case and average-case analysis
+For the remainder of this book, though, we shall usually concentrate on finding only **the worst-case running time**, that is, the **longest running time** for any input of size n.
+1. The worst-case running time of an algorithm gives us **an upper bound** on the running time for any input.
+1. For some algorithms, the worst case **occurs fairly often**. For example, in searching a database for a particular piece of information, the searching algorithm’s worst case will often occur when the information is **not present in the database**. In some applications, **searches for absent information** may be frequent.
+1. The “average case” is often roughly **as bad as** the worst case. The resulting average-case running time turns out to be a quadratic function of the input size, **just like** the worst-case running time.
+
+In some particular cases, we shall be interested in **the average-case running time** of an algorithm; we shall see the technique of **probabilistic analysis** applied to various algorithms throughout this book. The scope of average-case analysis is limited, because it **may not be apparent** what constitutes an “average” input for a particular problem. Often, we shall assume that all inputs of a given size **are equally likely**. In practice, this assumption may be violated, but we can sometimes use a **randomized algorithm**, which makes random choices, to allow a probabilistic analysis and yield an **expected** running time. We explore randomized algorithms more in Chapter 5 and in several other subsequent chapters.
+####Order of growth
+We shall now make one more simplifying abstraction: it is the **rate of growth**, or **order of growth**, of the running time that really interests us. We therefore consider **only the leading term** of a formula (e.g., $an^2$), since the lower-order terms are relatively insignificant for large values of `n`. For insertion sort, when we ignore the lower-order terms and the leading term’s constant coefficient, we are left with **the factor of n2 from the leading term**. We write that insertion sort has **a worst-case running time** of $\Theta(n^2)$ (pronounced “theta of n-squared”). We shall use $\Theta$-notation informally in this chapter, and we will define it precisely in Chapter 3.
+##III.Designing algorithms
+###The divide-and-conquer approach
+We’ll use divideand-conquer to design a sorting algorithm whose worst-case running time is much less than that of insertion sort. One advantage of divide-and-conquer algorithms is that **their running times are often easily determined** using techniques that we will see in Chapter 4.
+
+Many useful algorithms are **recursive** in structure: to solve a given problem, they call themselves recursively **one or more times to deal with closely related subproblems**.They **break the problem into several subproblems** that are **similar to the original problem** but smaller in size, solve the subproblems recursively, and then **combine these solutions to create a solution to the original problem**.
+
+The divide-and-conquer paradigm involves **three steps** at each level of the recursion:
+1. **Divide** the problem into **a number of subproblems** that are smaller instances of the same problem.
+1. **Conquer** the subproblems by solving them recursively. If the subproblem sizes are small enough, however, just **solve the subproblems in a straightforward manner**.
+1. **Combine** the solutions to the subproblems into the solution for the original problem.
+
+The key operation of the merge sort algorithm is the **merging of two sorted sequences** in the “combine” step. We merge by calling an auxiliary procedure `MERGE(A,p,q,r)`, where `A` is an array and `p, q,` and `r` are indices into the array such that $p\leq q<r$. The procedure assumes that the subarrays `A[p ... q]` and `A[q+1 ... r]` are in **sorted order**. It merges them to form a single sorted subarray that replaces the current subarray `A[p ... r]`.Our MERGE procedure takes time **$\Theta(n)$**.
+
+The following pseudocode implements the above idea, but with an additional twist that **avoids having to check whether either pile is empty** in each basic step. We place on the bottom of each pile **a sentinel card**, which contains **a special value** that we use to simplify our code. Here, we use $\infty$ as the sentinel value, so that whenever a card with $\infty$ is exposed, it **cannot be the smaller** card unless both piles have their sentinel cards exposed. But **once that happens**, all the **nonsentinel cards have already been placed onto the output pile**. Since we know in advance that exactly `r-p+1` cards will be placed onto the output pile, we **can stop once we have performed that many basic steps**.
+\[\begin{array}{cl}
+n & MERGE(A,p,q,r)
+\\1&n_1=q-p+1
+\\2&n_2=r-q
+\\3&\text{let}\,L[1..n_1+1]\,\text{and}\,R[1..n_2+1]\,\text{be new arrays}
+\\4&\text{for}\,i=1\text{to}\,n_1
+\\5&\quad L[i]=A[p+i-1]
+\\6&\text{for}\,j=1\text{to}\,n_2
+\\7&\quad R[j]=A[q+j]
+\\8&L[n_1+1]=\infty
+\\9&R[n_2+1]=\infty
+\\10&i=1
+\\11&j=1
+\\12&\text{for}\,k=p\,\text{to}\,r
+\\13&\quad\text{if}\,L[i]\leq R[j]
+\\14&\quad\quad A[k]=L[i]
+\\15&\quad\quad i=i+1
+\\16&\quad\text{else}\,A[k]=R[j]
+\\17&\quad\quad j=j+1
+\end{array}\]

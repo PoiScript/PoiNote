@@ -168,11 +168,15 @@ $\displaystyle\frac1{(s-1+j)(s-1-j)}$|(1,1)(1,-1)|$\sin(t)e^tu(t)$
 ##IV.连续时间系统的模拟
 ###i.系统的基本联接
 ####1.系统的级联
-\[F(s)\to{}H_1(s)\xrightarrow{X(s)}H_2(s)\to{}Y(s)\Rightarrow{}F(s)\to{}H_1(s)H_2(s)\to{}Y(s)\]
+\[F(s)\to{}\boxed{H_1(s)}\xrightarrow{X(s)}\boxed{H_2(s)}\to{}Y(s)\\\Rightarrow{}F(s)\to\boxed{H_1(s)H_2(s)}\to{}Y(s)\]
 ####2.系统的并联
-\[F(s)\to\left\{\begin{aligned}H_1\\H_2\end{aligned}\right.\
-\left.\begin{array}\\(s)\\(s)\end{array}\right\}=Y(s)\Rightarrow{}F(s)\to{}H_1(s)+H_2(s)\to{}Y(s)\]
+\[\require{AMScd}\begin{CD}F(s)@>>>\boxed{H_1(s)}\\@VVV@VVV\\\boxed{H_2(s)}@>>>\oplus@>>>Y(s)\end{CD}\\\Rightarrow{}F(s)\to\boxed{H_1(s)+H_2(s)}\to{}Y(s)\]
 ####3.反馈环路
+\[\require{AMScd}\begin{CD}
+F(s)@>>>\oplus@>{E(s)}>>\boxed{K(s)}@>>>@>>>Y(s)
+\\@.@AAA@.@VVV\\@.@<<<\boxed{\beta(s)}@<<<
+\end{CD}\]
+\[Y(s)=E(s)K_1(s)K_2(s)\\E(s)=F(s)-\beta_1(s)E(s)K_1(s)-\beta_2(s)E(s)K_1(s)K_2(s)\\H(s)=\frac{K_1(s)K_2(s)}{1+\beta_1(s)K_1(s)+\beta_2(s)K_1(s)K_2(s)}\]
 ###ii.连续系统的模拟框图
 ####1.直接型结构
 

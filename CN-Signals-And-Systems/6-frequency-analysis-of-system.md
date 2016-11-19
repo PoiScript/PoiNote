@@ -130,15 +130,53 @@ $K$ 为常数，$t_d$ 是输入信号通过系统后的延迟时间。
 
 抽样后的离散时间序列是否包括原连续信号的全部信息, 抽样定理给出了抽样后的信号包含原连续信号全部信息的条件 可以说 抽样定理在连续时间信号和离散时间信号之间架起了一座桥
 ###i.信号抽样的理论分析
-####1. 理想抽样信号的频谱分析
-若连续信号 $f(t)$ 的频谱函数为 $F(j\omega)$，则抽样信号
-\[f_s(t)=f(t)\cdot\delta_T(t)=f(t)\sum^\infty_{k=-\infty}\delta(t-kT)\]
-频谱函数 $F_s(j\omega)$ 为
-\[F_s(j\omega)=\frac1{2\pi}F(j\omega)* \omega_s\sum^{+\infty}_{n=-\infty}\delta[\omega-n\omega_s]\\=\frac{\omega_s}{2\pi}\sum^{+\infty}_{n=-\infty}F[j(\omega-n\omega_s)]\quad \omega_s=\frac{2\pi}T\]
+我们将抽样后的离散时间信号以连续时间信号表示:
+\[f_s(t)=\sum^\infty_{k=-\infty}f(kT)\delta(t-kT)\]
+其中 **$T$ 为抽样周期, $f_s=1/T$ 为抽样频率, $\omega_s=2\pi/T$ 为抽样角频率**
+
+抽样信号等价为:
+\[f_s(t)=f(t)\cdot\delta_T(t)\]
+若连续信号 $f(t)$ 的频谱函数为 $F(j\omega)$，则为:
+\[F_s(j\omega)=\frac1{2\pi}F(j\omega)*
+\omega_s\sum^{+\infty}_{n=-\infty}\delta(\omega-n\omega_s)\\\xrightarrow{冲激信号卷积特性}\frac{\omega_s}{2\pi}\sum^{+\infty}_{n=-\infty}F[j(\omega-n\omega_s)]\quad \omega_s=\frac{2\pi}T\]
+有理想抽样信号的频谱是周期的, 其周期为 $\omega_s$ 对连续信号的频谱位移 **整数倍**, 再对所有这些频谱求和即可得出理想抽样信号的频谱
+
+设实信号 $f(t)$ 是带限的, 即在 $|\omega|>\omega_m$ 时信号的频谱为零 成 $\omega_m$ 为信号的最高角频率 记 $F_n(j\omega)=F(j(\omega-n\omega_s))$ 随着角频率的降低 相邻的 $F_n(j\omega)$ 之间的间隔将会减小 这就使得 **相邻部分的 $F_n(j\omega)$ 有可能发生重叠** 导致抽样信号频谱失真 这种由 **非零值重叠引起的失真称为混叠(Aliasing)**
+####过抽样 $\omega_s>2\omega_m$
+抽样信号 $f_s(t)$ 包括了原信号 $f(t)$ 所有的信息 可以从抽样信号恢复原信号
+####临界抽样 $\omega_s=2\omega_m$
+抽样信号频谱没有发生混叠 但是再降低抽频率 抽样信号的频谱将发生混叠
+####混叠 $\omega_s<2\omega_m$
+相邻的 $F_n(j\omega)$ 的非零部分发生了重叠 使抽样信号发生了混叠 这意味着抽样信号 $f_s(t)$ 丢失了原信号 $f(t)$ 中的部分信息 这时不可能从抽样信号恢复原信号
 ###ii.时域抽样定理
+若带限信号 $f(t)$ 的最高角频率为 $\omega_m$，则信号 $f(t)$ 可以用 **等间隔的抽样值** 唯一地表示。而抽样间隔 $T$ 需不大于 $1/2f_m$，或最低抽样频率 $f_s$ 不小于 $2f_m$。
+
+若从抽样信号 $f_s(t)$ 中恢复原信号 $f(t)$，需满足两个条件：
+1. $f(t)$ 是 **带限信号**，即其频谱函数在 $|\omega|>\omega_m$ 各处为零；
+1. 抽样间隔 $T$ 需满足， 或抽样频率 $f_s$ 需满足 $fs\geq2f_m(或\omega_s\geq2ω m)$。**$f_s=2f_m$** 为使信号不发生混叠的 **最小抽样频率**，称为Nyquist 频率. **$T=1/(2f_m)$** 是使信号不发生混叠的 **最大抽样间隔**, 成为Nyquist 间隔.
 ###iii.抽样定理的工程应用
-###iv.信号重建
-###v.实际应用举例
+许多实际工程信号不满足带限条件
+\[f(t)\to\underbrace{抗混低通滤波器}_{h(t)}\to f_1(t)\]
+###iv.实际应用举例
+利用离散系统处理连续时间信号
+\[f(t)\to[A/D]\xrightarrow{f[k]}H(z)\xrightarrow{y[k]}[D/A]\to y(t)\]
+1. 生物医学信号处理
+1. 铁路控制信号识别
+###v.信号重建
+信号的重建指从抽样信号 $f_s(t)$ 中恢复原信号 $f(t)$ 的过程
+
+要从抽样信号 $f_s(t)$ 中恢复原信号 $f(t)$ 可用一个 **理想低通滤波器** 对抽样信号 $f_s(t)$ 进行滤波 理想低通滤波器的 **幅度响应** 在通频带内为常数 $T$ 理想低通滤波器的 **截止角频率** 为 $\omega_c(\omega_m<\omega_c\leq\omega_s/2)$ 即:
+\[H_r(j\omega)=\begin{cases}T&|\omega|<\omega_c\\0&|\omega|>\omega_c\end{cases}\]
+抽样信号 $f_s(t)$ 通过该理想低通滤波器即可恢复原信号 $f(t)$
+####分析
+取 **$\omega_c=\omega_s/2$** 得理想重建滤波器的冲激响应为
+\[h_r(t)=\mathscr{F}^{-1}[H_r(j\omega)]=Sa(\frac{\omega_st}2)\]
+在取样点上 即 $t=kT$ 时, 有:
+\[h_r(kT)=Sa(\frac{\omega_skT}2)=Sa(\pi k)=\delta[k]\]
+即 $h_r(t)$ 除了在 $t=0$ 时, 在其他抽样点上的值均为0, 当将抽样信号 $f_s(t)$ 加到系统 $h_r(t)$ 的输入端 系统输出为 $f(t)$ $f_s(t)$ 的每一个冲激经过系统后将产生一个幅度等于冲激强度的抽样脉冲信号 对所有的抽样脉冲信号求和即得 $f(t)$ $f_s(t)$ 的第k个冲激为 $f(kT)\delta(t-kT)$ 该冲激通过滤波器产生的脉冲为 $f(kT)h_r(t-kT)$ 由 **系统的线性特性** 得 $f_s(t)$ 通过滤波器的输出为 $f(t)$ 为:
+\[f(t)=\sum_kf(kT)h_r(t-kT)=\sum_kf(kT)Sa(\omega_s(t-kT)/2)\\
+=\sum_kf(kT)Sa(\omega_st/2-\pi k)\]
+上式为内插公式 即在满足抽样定理的条件下 可由信号在抽样点的值进行内插来恢复原信号 $f(t)$
 ##V.调制与解调
 //TBD
 ##VI.离散时间系统的频域分析
