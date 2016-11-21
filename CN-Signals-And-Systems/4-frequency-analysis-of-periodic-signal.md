@@ -2,8 +2,9 @@
 ##I.周期信号的傅里叶级数展开
 1. 周期信号
 \[f(t)=f(t+kT_0) (k=0,\pm1,\pm2,...)\]
-1. 周期信号可以表示为三角波的线性组合
-\[f(t)=b_1\sin(\omega_0t)+b_2\sin(2\omega_0t)+b_3(3\omega_0t)+...\\=\sum^{\infty}_{n=0}b_n\sin(n\omega_0t)\\\omega_0=2\pi/T_0\]
+满足上描述的最小 $T_0$ 为周期信号的 **基波周期** $\omega_0$ 为 **基波角频率**
+2. 周期信号可以表示为 **三角波的线性组合**
+\[f(t)=b_1\sin(\omega_0t)+b_2\sin(2\omega_0t)+b_3(3\omega_0t)+...\\=\sum^{\infty}_{n=0}b_n\sin(n\omega_0t)\quad\omega_0=2\pi/T_0\]
 \[f(t)=\frac{a_0}{2}+\sum^{\infty}_{n=1}[a_n\cos(n\omega_0t)+b_n\sin(n\omega_0t)]\]
 ###连续信号的分解
 ####1.连续信号分解为 单位冲激信号 的线性组合
@@ -15,127 +16,125 @@
 利用频域特性求解系统的输出信号及系统函数
 ###频率和频域
 1. 频率: **物质** 在 **1秒** 内完成 **周期** 性变化的次数叫做频率。
-1. 频域(frequency domain): 即频率域，是指在对 **函数** 或 **信号** 进行分析时，分析其和频率有关部份，而不是和 **时间** 有关的部份。
+1. 频域(frequency domain): 即 **频率域**，是指在对 **函数** 或 **信号** 进行分析时，分析其和频率有关部份，而不是和 **时间** 有关的部份。
 1. 频域下的信号: 信号在频域下的图形（一般称为 **频谱** ）可以显示信号分布在哪些频率及其比例。信号在 **时域** 下的图形可以显示信号如何随着时间变化 。
 ###连续周期信号的频域分析
-将信号表示为 **不同频率复指数分量** 的 **线性组合**<br>
+将信号表示为 **不同频率复指数分量** 的 **线性组合**
+
 意义:
 1. **从信号分析的角度** ，将信号表示为不同频率 **复指数分量** 的线性组合，为不同信号之间进行比较提供了途径。
 1. **从系统分析角度** ，已知单频正弦信号激励下的响应，利用 **迭加特性** 可求得多个不同频率正弦信号同时激励下的总响应,而且每个正弦分量通过系统后的变化。
 ##II.傅里叶级数的基本性质
 ###i.周期信号的傅里叶级数展开
 ####1.傅里叶级数的引进
-法国数学家 **傅里叶** 发现，任何周期函数都可以用 **正弦函数** 和 **余弦函数** 构成的无穷级数来表示，后世称为傅里叶级数。<br>
-函数 $f(t)$ 可分解为无穷多项正交函数之和
+法国数学家 **傅里叶** 发现，任何周期函数都可以用 **正弦函数** 和 **余弦函数** 构成的无穷级数来表示，后世称为 **傅里叶级数**。
+
+函数 $f(t)$ 可分解为无穷多项 **正交函数** 之和
 ####2.信号分解为正交函数
 矢量正交与正交分解
 #####矢量正交:
-指矢量 $V_x=(V{x1},V_{x2},V_{x3})$ 与 $V_y=(V_{y1},V_{y2},V_{y3})$ 的内积为0.
+指矢量 $V_x=(V_{x1},V_{x2},V_{x3})$ 与 $V_y=(V_{y1},V_{y2},V_{y3})$ 的内积为0.
 \[V_XY_X^T = \sum^{3}_{i=1}v_{xi}v_{yi}=0\]
 #####正交矢量集:
-指由两两正交的矢量组成的矢量集合<br>
-如三维空间中，以矢量 $v_x=(2,0,0), v_y=(0,2,0), v_z=(0,0,2)$ 所组成的集合就是一个正交矢量集，且完备。
+指由 **两两正交的矢量** 组成的矢量集合
+
+如 三维空间中，以矢量 $v_x=(2,0,0), v_y=(0,2,0), v_z=(0,0,2)$ 所组成的集合就是一个 **正交矢量集**，且完备。
 #####信号正交与正交函数集:
-1. **信号正交**:指矢量 $\phi_1(t)$ 与 $\phi_2(t)$ 在 $(t_1,t_2)$ 区间满足 $\int^{t_2}_{t_1}A(t)\phi_2^*(t)dt=0$<br>
-则称 $\phi_1(t)$ 和 $\phi_2(t)$ 在区间 $(t_1,t_2)$ 内正交。
-2. **正交函数集**：若n个函数 $\xi_1(t),\xi_2(t),...,\xi_n(t)$
+1. **信号正交**:指矢量 $\phi_1(t)$ 与 $\phi_2(t)$ 在 $(t_1,t_2)$ 区间满足 $\displaystyle\int^{t_2}_{t_1}A(t)\phi_2^* (t)dt=0$ 则称 $\phi_1(t)$ 和 $\phi_2(t)$ 在区间 $(t_1,t_2)$ 内正交。
+2. **正交函数集**：若n个函数 $\phi_1(t),\phi_2(t)\cdots\phi_n(t)$
 构成一个函数的集，这些函数在区间 $(t_1,t_2)$ 内满足
-\[\int^{t_2}_{t_1}\phi(t)\phi_j^*(t)dt=\left\{
-   \begin{aligned}
-   0,i\neq j\\
-   K\neq0,i=j\\
-   \end{aligned}
-  \right.\]
+\[\int^{t_2}_{t_1}\phi(t)\phi_j^* (t)dt=
+   \begin{cases}
+   0&i\neq j\\
+   K\neq0&i=j\\
+   \end{cases}\]
 #####完备正交函数集:
-如果在正交函数集 ${\phi_1(t),\phi_2(t),...,\phi_n(t)}$ 之外不存在函数 $\phi(t)(\neq0)$ 满足
+如果在正交函数集 ${\phi_1(t),\phi_2(t)\cdots\phi_n(t)}$ 之外不存在函数 $\phi(t)(\neq0)$ 满足
 \[\int^{t_2}_{t_1}\phi^*(t)\phi_i(t)dt=0(i=1,2,…,n)\]
 则称此函数为 **完备正交函数集**<br>
-例如：**三角函数集** $\{1, \cos(n\omega t), \sin(n\omega t), n=1,2,...\}$<br>
-**虚指数函数集** $\{e^{jn\omega t}, n=0,+-1,+-2,...\}$<br>
-是典型的在区间 $(t_0, t_0+T)(T=2\pi/\omega)$ 上的完备正交函数集。<br>
-三角函数集 $\{1,\cos(n\omega t),\sin(n\omega t), \}$ 在一个周期内是一个完备的正交函数集。
-\[\int^{\frac{T}{2}}_{-\frac{T}{2}}\cos(n\omega t)\sin(m\omega t)dt = 0\]
-\[\int^{\frac{T}{2}}_{-\frac{T}{2}}\cos(n\omega t)\cos(m\omega t)dt =\left\{
-   \begin{aligned}
-   \frac{T}{2},m=n\\
-   0,m\neq n\\
-   \end{aligned}
-  \right.\]
-\[\int^{\frac{T}{2}}_{-\frac{T}{2}}\sin(n\omega t)\sin(m\omega t)dt =\left\{
-   \begin{aligned}
-   \frac{T}{2},m=n\\
-   0,m\neq n\\
-   \end{aligned}
-  \right.\]
+例如：**三角函数集** $\{1, \cos(n\omega t), \sin(n\omega t), n=1,2,...\}$ **虚指数函数集** $\{e^{jn\omega t}, n=0,+-1,+-2,...\}$ 是典型的在区间 $(t_0, t_0+T)(T=2\pi/\omega)$ 上的完备正交函数集。
+
+三角函数集 $\{1,\cos(n\omega t),\sin(n\omega t), \}$ 在 **一个周期内** 是一个完备的正交函数集。
+\[\int^{T/2}_{-T/2}\cos(n\omega t)\sin(m\omega t)dt=0\]
+\[\int^{T/2}_{-T/2}\cos(n\omega t)\cos(m\omega t)dt =\begin{cases}\displaystyle\frac T2,m=n\\
+   0,m\neq n\end{cases}\]
+\[\int^{T/2}_{-T/2}\sin(n\omega t)\sin(m\omega t)dt =\begin{cases}\displaystyle\frac T2&m=n\\
+   0&m\neq n\end{cases}\]
 ####3. 傅里叶级数的三角形式
 \[f(t)=\frac{a_0}{2}+\sum^{\infty}_{n=1}[a_n\cos(n\omega t)+b_n\sin(n\omega t)],\omega=2\pi/T\]
-\[\int^{\frac{T}{2}}_{-\frac{T}{2}}f(t)\cos(k\omega k)dt\\=\int^{\frac{T}{2}}_{-\frac{T}{2}}(\frac{a_0}{2}+\sum^{\infty}_{n=1}[a_n\cos(n\omega t)+b_n\sin(n\omega t)])\cos(k\omega t)dt\\=\frac{T}{2}a_k\]
-\[a_n=\frac{2}{T}\int^{\frac{T}{2}}_{-\frac{T}{2}}f(t)\cos(n\omega t)dt\]
-\[a_0=\frac{2}{T}\int^{\frac{T}{2}}_{-\frac{T}{2}}f(t)dt\]
 ---
-\[\int^{\frac{T}{2}}{-\frac{T}{2}}f(t)\cos(k\omega k)dt\\=\int^{\frac{T}{2}}{-\frac{T}{2}}(\frac{a_0}{2}+\sum^{\infty}_{n=1}[a_n\cos(n\omega t)+b_n\sin(n\omega t)])\sin(k\omega t)dt\\=\frac{T}{2}b_k\]
-\[b_n=\frac{2}{T}\int^{\frac{T}{2}}_{-\frac{T}{2}}f(t)\sin(n\omega t)dt\]
-\[b_0=\frac{2}{T}\int^{\frac{T}{2}}_{-\frac{T}{2}}f(t)\sin(0t)dt=0\]
-        f(t)=\frac^{a_0}{2}+\int^{}_{n=1}[a_n\cos(n\omega t)+b_n\sin(n\omega t)] \omega=2\pi/ 其中a_n a_b 为傅里叶系数
-        a_n=\frac^{2}_{T}\int^{\frac^{T}_{2}}_{-\frac^{T}_{2}}\sin(n\omega t)dt a_n是n的偶函数
-        b_n=\frac^{2}_{T}\int^{\frac^{T}_{2}}_{-\frac^{T}_{2}}\cos(n\omega t)dt b_n是n的奇函数
-        纯余弦形式傅里叶级数
-          f(t)=\frac^{A_0}_{2}+\int^{}_{n=1}A_n\cos(n\omega t)+\xi_n
-          周期信号可分解为直流分量和许多余弦分量
-          A_0/2称为信号的直流分量，A_n\cos(n\omega_0 t+\xi_n) 称为信号的n次谐波分量。
-         波形的对称性与谐波特性
-          a_n=\frac^{2}_{T}\int^{\frac^{T}_{2}}_{\frac^{T}_{2}}f(t)\cos(n\omega t)dt
-          b_n=\frac^{2}_{T}\int^{\frac^{T}_{2}}_{\frac^{T}_{2}}f(t)\sin(n\omega t)dt
-          (1) f(t)为偶函数 b_n=0，展开为余弦级数
-          (2) f(t)为奇函数 a_n=0，展开为正弦级数
-          (3) f(t)为半波镜像信号 f(t)=-f(t \frac^{T}_{2})
-            此时傅里叶级数中只含奇次谐波分量 a_0=a_2=...=b_0=b_2=...=0
-          (4) 半波重叠信号 f(t)=f(t \frac^{T}_{2})
-            此时傅里叶级数中只含偶次谐波分量 a_1=a_3=...=b_1=b_3=...=0
-      3、周期信号展开为傅里叶级数条件
-        周期信号f (t)应满足Dirichlet条件，即：
-        (1) 在一个周期内绝对可积，即满足 \int^{T_0+t_0}_{t_0}|f(t)|dt 为有限值。
-        (2) 在一个周期内只有有限个不连续点；
-        (3) 在一个周期内只有有限个极大值和极小值。
-        注意：条件(1)为充分条件但不是必要条件 条件(2)(3)是必要条件但不是充分条件
-      4、傅里叶级数的指数形式
-        傅里叶级数的 阶谐波n 可以用指数形式表示。 a_n\cos(n\omega_0t)+b_n\sin(n\omega_0t) (n=1,2,...)
-        \cos(n\omega_0t)=\frac{1}{2}(e^{jn\omega_0t}+e^{-jn\omega_0t})
-        \sin(n\omega_0t)=-\frac{j}{2}(e^{jn\omega_0t}-e^{-jn\omega_0t})
-        f(t)=\frac^{a_0}_{2}+\int^{}_{n=1}(a_n\cos(n\omega_0t)+b_n\sin(m\omega_0t))
-        =\frac^{a_0}_{2}+\sum^{\infty}_{n=1}(\frac^{a_n-jb_n}_2e^{jn\omega_0t}+\frac^{a_n+jb_n}_2e^{-jn\omega_0t})
-          C_0=\frac^{a_0}_2 C_n=\frac^{a_n-jb_n}_2 C_{-n}=\frac^{a_n+jb_n}_{2}
-        f(t)=\sum^{\infty}{n=-\infty}C_ne^{jn\omega_0t} C_n为复傅里叶系数
-        三角形式的傅里叶级数含义比较明确，但运算常感不便，因而经常采用指数形式的傅里叶级数
-        连续时间周期信号可以用指数形式傅里叶级数表示为 f(t)=\sum^{\infty}{n=-\infty}C_ne^{jn\omega_0t} 其中 C_n=\frac^{1}_{T_0}\int
-          n = 0 这一项是一个常数，称为信号的直流分量
-          n = +-1 的基波频率为  \omega_0 ，两项合起来称为信号的基波分量
-          n = +-2 的基波频率为2 \omega_0  ，两项合起来称为信号的2次谐波分量
-          n = +-n 的基波频率为N \omega_0  ，两项合起来称为信号的N次谐波分量
-        物理含义：
-          周期信号f (t)可以分解为不同频率虚指数信号之和
-    1.2  傅里叶级数的基本性质
-      线性特性
-        若 f_1(t)=>C_{1n} f_2(t)=>C_{2n}
-        则有 a_1 f_1(t) + a_2 f_2(t) => a_1 C_{1n} + a_2 C_{2n}
-      时移特性
-        若 f(t) => C_n
-        则有 f(t-t_0) => e^{-jn\omega_0t_0}C_n
-      卷积特性
-        若 f1(t) 和 f2(t) 均是周期为T0的周期信号，且
-        f_1(t) => C_n f_2(t) => C_{2n}
-        则有 f_1(t)*f_2(t) => T_0C_{1n}C_{2n}
-      微分特性
-        若 f(t) => C_n 则有 f'(t) => jn\omega_0C_n
+\[\int^{T/2}_{-T/2}f(t)\cos(k\omega t)dt\\=\int^{T/2}_{-T/2}\Big(\frac{a_0}2+\sum^\infty_{n=1}\big[a_n\cos(n\omega t)+b_n\sin(n\omega t)\big]\Big)\cos(k\omega t)dt=\frac T2a_k\]
+\[a_n=\frac2T\int^{T/2}_{-T/2}f(t)\cos(n\omega t)dt\quad a_0=\frac2T\int^{T/2}_{-T/2}f(t)dt\]
+---
+\[\int^{T/2}_{-T/2}f(t)\sin(k\omega t)dt\\=\int^{T/2}_{-T/2}\Big(\frac{a_0}2+\sum^\infty_{n=1}\big[a_n\cos(n\omega t)+b_n\sin(n\omega t)\big]\Big)\sin(k\omega t)dt=\frac T2b_k\]
+\[b_n=\frac2T\int^{T/2}_{-T/2}f(t)\sin(n\omega t)dt\quad b_0=\frac2T\int^{T/2}_{-T/2}f(t)\sin(0t)dt=0\]
+---
+\[f(t)=\frac{a_0}2+\sum^\infty_{n=1}\big[a_n\cos(n\omega t)+b_n\sin(n\omega t)\big]\quad\omega=2\pi\quad其中a_n a_b为傅里叶系数\]
+\[a_n=\frac2T\int^{T/2}_{-T/2}\sin(n\omega t)dt\quad a_n是n的偶函数\]
+\[b_n=\frac2T\int^{T/2}_{-T/2}\cos(n\omega t)dt\quad b_n是n的奇函数\]
+#####纯余弦形式傅里叶级数
+\[f(t)=\frac{A_0}2+\sum^\infty_{n=1}A_n\cos(n\omega t)+\xi_n\]
+$A_n=\sqrt{a^n+b^n}$(n的偶函数) $\varphi=\arctan\bigg(\displaystyle\frac{-b_n}{a_n}\bigg)$ $a_n=A_n\cos\varphi_n\quad b_n=-A_n\sin\varphi_n\quad n=1,2\cdots$
+
+周期信号可分解为 **直流分量** 和许多 **余弦分量**
+
+$A_0/2$ 称为信号的 **直流分量**，$A_n\cos(n\omega_0 t+\varphi_n)$ 称为信号的 **n次谐波分量**
+#####波形的对称性与谐波特性
+\[a_n=\frac2T\int^{T/2}_{-T/2}f(t)\cos(n\omega t)dt\]
+\[b_n=\frac2T\int^{T/2}_{-T/2}f(t)\sin(n\omega t)dt\]
+1. $f(t)$ 为 **偶函数** $b_n=0$，展开式中 **只有直流项和余弦项**
+1. $f(t)$ 为 **奇函数** $a_n=0$，展开式中 **只有正弦项**
+1. $f(t)$ 为 **半波镜像信号** $f(t)=-f(t\pm T_0/2)$ 此时傅里叶级数中只含 **奇次谐波分量** $a_0=a_2=\cdots=b_0=b_2=\cdots=0$
+1. $f(t)$ 为 **半波重叠信号** $f(t)=f(t\pm T_0/2)$ 此时傅里叶级数中只含 **偶次谐波分量** $a_1=a_3=\cdots=b_1=b_3=\cdots=0$
+####4. 周期信号展开为傅里叶级数条件
+周期信号 $f(t)$ 应满足 **Dirichlet条件**，即：
+1. 在一个周期内 **绝对可积**，即满足 $\displaystyle\int^{T_0+t_0}_{t_0}|f(t)|dt$ 为有限值。
+1. 在一个周期内只有 **有限个不连续点**；
+1. 在一个周期内只有 **有限个极大值和极小值**。
+
+注意：条件1为 **充分条件但不是必要** 条件 条件2,3是 **必要条件但不是充分** 条件
+####5. 傅里叶级数的指数形式
+傅里叶级数的n阶谐波 $a_n\cos(n\omega_0t)+b_n\sin(n\omega_0t)(n=1,2\cdots)$ 可以用指数形式表示:
+\[\cos(n\omega_0t)=\frac12(e^{jn\omega_0t}+e^{-jn\omega_0t})\quad\sin(n\omega_0t)=-\frac j2(e^{jn\omega_0t}-e^{-jn\omega_0t})\]
+\[f(t)=\frac{a_0}2+\sum^\infty_{n=1}\big[a_n\cos(n\omega_0t)+b_n\sin(m\omega_0t)\big]\]
+\[=\frac{a_0}2+\sum^{\infty}_{n=1}(\frac{a_n-jb_n}2e^{jn\omega_0t}+\frac{a_n+jb_n}2e^{-jn\omega_0t})\]
+\[C_0=\frac{a_0}2\quad C_n=\frac{a_n-jb_n}2\quad C_{-n}=\frac{a_n+jb_n}2\]
+\[f(t)=\sum^\infty_{n=-\infty}C_ne^{jn\omega_0t}\quad C_n为复傅里叶系数\]
+**三角形式** 的傅里叶级数含义比较明确，但运算常感不便，因而经常采用 **指数形式** 的傅里叶级数
+
+连续时间周期信号可以用指数形式傅里叶级数表示为
+\[f(t)=\sum^\infty_{n=-\infty}C_ne^{jn\omega_0t}\quad其中 C_n=\frac1{T_0}\int^{T_0}_0f(t)e^{-jn\omega_0t}dt\]
+1. $n=0$ 这一项是一个常数，称为信号的 **直流分量**
+1. $n=\pm1$ 的基波频率为  $\omega_0$，两项合起来称为信号的 **基波分量**
+1. $n=\pm2$ 的基波频率为 $2\omega_0$，两项合起来称为信号的 **2次谐波分量**
+1. $n=\pm n$ 的基波频率为 $N\omega_0$，两项合起来称为信号的 **N次谐波分量**
+#####物理含义：
+周期信号 $f(t)$ 可以分解为 **不同频率虚指数信号** 之和
+###ii.傅里叶级数的基本性质
+###1.线性特性
+\[f_1(t)\to C_{1n}\quad f_2(t)\to C_{2n}\]
+\[\Rightarrow a_1f_1(t)+a_2f_2(t)\to a_1C_{1n}+a_2C_{2n}\]
+###2.时移特性
+\[f(t)\to C_n\]
+\[\Rightarrow f(t-t_0)\to e^{-jn\omega_0t_0}C_n\]
+###3.卷积特性
+$f1(t)$ 和 $f2(t)$ 均是周期为 $T_0$ 的周期信号，且
+\[f_1(t)\to C_n\quad f_2(t)\to C_{2n}\]
+\[\Rightarrow f_1(t)* f_2(t)\to T_0C_{1n}C_{2n}\]
+###4.微分特性
+\[f(t)\to C_n\Rightarrow f'(t)\to jn\omega_0C_n\]
 ##III.周期信号的频谱及其特点
 ###i.频谱的概念
-从广义上说，信号的某种特征量（幅值、相位）随信号频率变化的关系，称为信号的频谱，所画出的图形称为信号的频谱图。
+从广义上说，信号的某种特征量(幅值、相位)随信号频率变化的关系，称为 **信号的频谱**，所画出的图形称为信号的频谱图。
 ###ii.周期信号的频谱
 **周期信号的频谱** 是指周期信号中各次谐波幅值、相位随频率变化的关系，即<br>
-将 $A_n\sim\omega$ 和 $\phi_n\sim\omega$ 的关系分别画在以 $\omega$ 为横坐标的平面上得到的两个图<br>
-分别称为 **幅度频谱图** 和 **相位频谱图** <br>
-因为 n>=0，所以称这种频谱为单边谱。
-周期信号f(t)可以分解为 **不同频率虚指数信号** 之和:
+将 $A_n\sim\omega$ 和 $\phi_n\sim\omega$ 的关系分别画在以 $\omega$ 为横坐标的平面上得到的两个图
+
+分别称为 **幅度频谱图** 和 **相位频谱图**
+
+因为 $n\geq0$，所以称这种频谱为 **单边谱**。
+
+周期信号 $f(t)$ 可以分解为 **不同频率虚指数信号** 之和:
 \[f(t) = \sum^{\infty}_{n=-\infty}C_ne^{jn\omega_0t}\]
 不同的时域信号，只是 **傅里叶级数的系数** $C_n$ 不同，因此通过研究傅里叶级数的系数来研究信号的特性。<br>
 $Cn$ 是频率的函数，它反映了组成信号各次谐波的幅度和相位随频率变化的规律，称 **频谱函数**。<br>
@@ -161,25 +160,28 @@ $0\sim2\pi/\tau$ 这段频率范围称为周期矩形脉冲信号的 **有效频
 即  越大，其 $\omega_B$ 越小；反之， 越小，其 $\omega_B$ 越大。<br>
 信号的有效带宽有多种定义方式。
 #####物理意义:
-在信号的有效带宽内，集中了信号绝大部分谐波分量。若信号丢失有效带宽以外的谐波成分，不会对信号产生明显影响。<br>
+在信号的有效带宽内，集中了信号绝大部分谐波分量。若信号丢失有效带宽以外的谐波成分，不会对信号产生明显影响。
+
 说明：当信号通过系统时，信号与系统的有效带宽必须“匹配”。
 ##IV.周期信号的功率谱
 ###i.周期信号的功率谱
 ####帕什瓦尔(Parseval)功率守恒定理:
 \[P=\frac{1}{T}\]
 ####物理意义:
-任意周期信号的平均功率等于信号所包含的直流和n次谐波分量在1欧电阻上消耗的平均功率之和。
+任意周期信号的 **平均功率** 等于信号所包含的直流和n次谐波分量在1欧电阻上消耗的 **平均功率之和**。
 ####周期信号的功率频谱:
 $|C_n|^2$ 随 $n\omega_0$ 分布情况称为周期信号的功率频谱，简称 **功率谱**<br>
-    2 吉伯斯（Gibbs）现象
-      用有限次谐波分量来近似原信号，在不连续点出现过冲，过冲峰值不随谐波分量增加而减少，且 为跳变值的9% 。
-      吉伯斯现象产生原因
-        时间信号存在跳变破坏了信号的收敛性，使得在间断点傅里叶级数出现非一致收敛。
+###ii. 吉伯斯（Gibbs）现象
+用有限次谐波分量来近似原信号，在不连续点出现过冲，过冲峰值 **不随谐波分量增加而减少**，且 为跳变值的 **9%**。
+####吉伯斯现象产生原因
+时间信号存在跳变破坏了信号的 **收敛性**，使得在间断点傅里叶级数出现 **非一致收敛**。
 ##V.总结:
-    分析问题使用的数学工具为傅里叶级数
-    最重要概念：频谱函数
-    要点
-    	1 频谱的定义、物理意义
-    	2 频谱的特点
-    	3 频谱的性质，应用性质分析复杂信号的频谱
-    	4 功率谱的概念
+分析问题使用的数学工具为 **傅里叶级数**
+
+最重要概念：**频谱函数**
+
+要点
+1. 频谱的定义、物理意义
+2. 频谱的特点
+3. 频谱的性质，应用性质分析复杂信号的频谱
+4. 功率谱的概念

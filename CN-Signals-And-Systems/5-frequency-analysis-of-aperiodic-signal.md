@@ -4,7 +4,7 @@
 周期为 $T_0$ 的周期信号的Fourier级数和Fourier系数 $C_n$ 分别为:
 \[f_{T_0}(t)=\sum^\infty_{n=-\infty}C_ne^{jn\omega_0t}\quad
 C_n=\frac1{T_0}\int^{T_0/2}_{-T_0/2}f_{T_0}(t)e^{-jn\omega_0t}dt\]
-当 $T_0\to\infty$ 时, 周期信号就变成了非周期信号,即:
+当 $T_0\to\infty$ 时, 周期信号就变成了 **非周期信号**,即:
 \[\lim_{T_0\to\infty}f_{T_0}(t)=f(t)\]
 为防止 $T_0\to\infty$ 时, $C_n\to0$, 将原式定义为:
 \[f(t)=\sum^\infty_{n=\infty}\frac{D_0}{T_0}e^{jn\omega_0t}\quad
