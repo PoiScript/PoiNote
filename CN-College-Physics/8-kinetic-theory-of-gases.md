@@ -20,7 +20,7 @@
 #### 化学平衡
 整个气体内部不发生化学变化或者核反应 而且化学成分处处稳定不变
 #### 平衡态
-某种气体处于热平衡 力学平衡 化学平衡之中 我们就说他处在热力学平衡状态之中 这种在不受外界影响的条件之下 气体所达到的状态参量不随时间变化的状态
+某种气体处于热平衡 力学平衡 化学平衡之中 我们就说他处在热力
 
 考虑到气体中热运动的存在 正是气体热运动才使平衡态得以形成和维持 所以气体的平衡态应该叫做热运动平衡状态
 #### 准静态过程
@@ -96,15 +96,15 @@ k 玻耳兹曼常量 为P与 $N_A$ 的比值 $k=1.38*10^{-23}J/K$
 机械能是宏观能 取决于物体的宏观运动状态
 内能是微观功能 取决于物体的微观运动状态 无序能量
 #### 理想气体的内能
-\[E=\frac{m}{M}\frac{i}{2}RT\]
+\[E=\frac{m}M\frac{i}2RT\]
 一定量的理想气体的内能完全取决于分子运动的自由度i和气体热力学温标T 而与气体的体积和压强无关 理想气体的内能只是温度的单值函数
 ## 8-5 麦克斯韦速率的分布律
 ### 速率分布函数
-\[\frac{dN}{N}=f(v)dv\]
+\[\frac{dN}N=f(v)dv\]
 f(v)既是分布函数 表示速率分布在v附近单位速率间隔内的分子的百分率
 ### 麦克斯韦速率分布律
 #### 麦克斯韦速率分布函数
-\[f(v)=4\pi\left(\frac{m_0}{2\pi{kT}}\right)^{3/2}e^{-\frac{m_0v^2}{2kT}}v^2\]
+\[f(v)=4\pi\left(\frac{m_0}{2\pi{kT}}\right)^{3/2}e^{-\displaystyle\frac{m_0v^2}{2kT}}v^2\]
 #### 最概然速率 $v_p$
 在一定温度下 速率大小与 $v_p$ 相近的气体分子的百分率为最大
 #### 平均速率 $\overline{v}$
@@ -112,9 +112,9 @@ f(v)既是分布函数 表示速率分布在v附近单位速率间隔内的分�
 #### 平均速率 $\overline{v}$
 \[\overline{v}=\sqrt{\frac{8kT}{\pi{m}}}=\sqrt{\frac{8RT}{\pi{M}}}\approx1.60\sqrt{\frac{RT}{M}}\]
 #### 方均根速率 $\sqrt{\overline{v^2}}$
-\[\sqrt{\overline{v^2}}=\sqrt{\frac{3kT}{m}}=\sqrt{\frac{3RT}{M}}\approx1.73\sqrt{\frac{RT}{M}}\]
+\[\sqrt{\overline{v^2}}=\sqrt{\frac{3kT}m}=\sqrt{\frac{3RT}{M}}\approx1.73\sqrt{\frac{RT}M}\]
 #### 最概然速率 $v_p$
-\[v_p=\sqrt{\frac{1}{b}}=\sqrt{\frac{2kT}{m}}=\sqrt{\frac{2RT}{M}}\approx1.41\sqrt{\frac{RT}{M}}\]
+\[v_p=\sqrt{\frac1b}=\sqrt{\frac{2kT}m}=\sqrt{\frac{2RT}M}\approx1.41\sqrt{\frac{RT}M}\]
 当温度升高的时候 三者都按照 $T^{1/2}$ 增加 这三种速率就不同问题有这各自的应用
 讨论速率分布时 用大量分子的最概然速率
 计算分子运动的平均距离时 用平均速率
@@ -126,6 +126,6 @@ f(v)既是分布函数 表示速率分布在v附近单位速率间隔内的分�
 #### 平均自由程
 每两次连续碰撞见一个分子自由运动的平均路程 以 $\overline{\lambda}$ 表示
 ### 平均自由程公式
-\[\overline{\lambda}=\frac{\overline{v}}{\overline{Z}}=\frac{1}{\sqrt{2}\pi{d^2n}}\]
-\[\overline{\lambda}=\frac{kT}{\sqrt{2}\pi{d^2p}}\]
+\[\overline\lambda=\frac{\overline v}{\overline Z}=\frac{1}{\sqrt2\pi d^2n}\]
+\[\overline\lambda=\frac{kT}{\sqrt2\pi d^2p}\]
 温度一定时 $\overline{\lambda}$ 与p成反比 压强愈小 平均自由程愈长
