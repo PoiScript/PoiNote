@@ -16,7 +16,7 @@
 ###ii.光波的相干叠加(superposition principle of light wave)
 ##VII.单缝的夫琅禾费衍射
 ###i.典型装置
-$A,B\to P$ 的光程差 $\delta=AC=a\sin\varphi$ ($a$ 为缝 $AB$ 的宽度 )
+$A,B\to P$ 的光程差 $\delta=AC=a\sin\varphi$ ($a$ 为缝 $AB$ 的宽度)
 ###ii.菲涅耳半波带法
 ####1.衍射暗纹、明纹条件
 \[a\sin\varphi=0,\varphi=0,\delta=0-中央明纹(中心)\]
