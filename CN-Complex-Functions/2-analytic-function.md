@@ -66,13 +66,13 @@
 3. 当 $\Im(z)=0$ 时, $f(z)=e^x$, 其中 $x=\Re(z)$。
 \[f(z)=e^x(\cos y+i\sin y)\\f'(z)=f(z)\quad y=0,f(z)=e^x\]
 我们称它为指数函数, 记作
-\[\text{exp}z=e^x(\cos y+i\sin y)=e^z\]
+\[\mathrm{exp}z=e^x(\cos y+i\sin y)=e^z\]
 ####指数函数的基本性质
-1. $\left|\text{exp}z\right|=e^x$
-2. $\text{Arg}(\text{exp}z)=y+2k\pi$
-3. $\text{exp}z\neq0$
-4. $\text{exp}z_1\cdot\text{exp}z_2=\text{exp}(z_1+z_2)$
-5. $\text{exp}z$ 的周期为 $2k\pi i$
+1. $\left|\mathrm{exp}z\right|=e^x$
+2. $\mathrm{Arg}(\mathrm{exp}z)=y+2k\pi$
+3. $\mathrm{exp}z\neq0$
+4. $\mathrm{exp}z_1\cdot\mathrm{exp}z_2=\mathrm{exp}(z_1+z_2)$
+5. $\mathrm{exp}z$ 的周期为 $2k\pi i$
 
 \[f(z)=f(x+iy)=e^xf(iy)\\f(iy)=A(y)+iB(y),f(z)=ie^xB(y)\]
 由解析性，我们利用柯西-黎曼条件，有
@@ -84,53 +84,151 @@
 我们也重新得到欧拉公式：
 \[e^{iy}=\cos y+i\sin y\]
 ###ii.对数函数
-满足 $e^w=z(z\neq0)$ 的函数 $w=f(z)$ 称为 对数函数, 记作 $w=\text{Ln}z$
+满足 $e^w=z(z\neq0)$ 的函数 $w=f(z)$ 称为 对数函数, 记作 $w=\mathrm{Ln}z$
 注解：由于对数函数是指数函数的反函数，而指数函数是周期为 $2\pi i$ 的周期函数，所以对数函数是多值函数。
 
-令 $w=u+iv,z=re^{i\theta}$，则 $e^{u+iv}=re^{i\theta}$所以 $u=\ln r,v=\theta+2k\pi(k=0,\pm1,\pm2\cdots)$即 $w=\ln|z|+i\text{Arg}z$
+令 $w=u+iv,z=re^{i\theta}$，则 $e^{u+iv}=re^{i\theta}$所以 $u=\ln r,v=\theta+2k\pi(k=0,\pm1,\pm2\cdots)$即 $w=\ln|z|+i\mathrm{Arg}z$
 
-由于 $\text{Arg}z$ 为多值函数，所以对数函数 $w=f(z)$ 为多值函数，并且每两个值相差 $2\pi i$ 的整数倍，记作
-\[\text{Ln}z=\ln|z|+i\text{Arg}z\]
-1. 如果规定上式中的 $\text{Arg}z$ 取主值 $\text{arg}z$，则 $\text{Ln}z$ 为一单值函数，记作 $\ln z$，称为 $\text{Ln}z$ 的 **主值**；因此有
-\[\ln z=\ln|z|+i\text{arg}z\]
-2. 其余各值可由 $\text{Ln}z=\ln z+2k\pi i(k=\pm1,\pm2)$表示；对于每一个固定的 $k$，上式为一单值函数，称为 $\text{Ln}z$ 的一个 **分支**；
-3. 特别地, 当 $z=x>0$ 时, $\text{Ln}z$ 的主值 $\ln z=\ln x$ 就是实变数对数函数。
+由于 $\mathrm{Arg}z$ 为多值函数，所以对数函数 $w=f(z)$ 为多值函数，并且每两个值相差 $2\pi i$ 的整数倍，记作
+\[\mathrm{Ln}z=\ln|z|+i\mathrm{Arg}z\]
+1. 如果规定上式中的 $\mathrm{Arg}z$ 取主值 $\mathrm{arg}z$，则 $\mathrm{Ln}z$ 为一单值函数，记作 $\ln z$，称为 $\mathrm{Ln}z$ 的 **主值**；因此有
+\[\ln z=\ln|z|+i\mathrm{arg}z\]
+2. 其余各值可由 $\mathrm{Ln}z=\ln z+2k\pi i(k=\pm1,\pm2)$表示；对于每一个固定的 $k$，上式为一单值函数，称为 $\mathrm{Ln}z$ 的一个 **分支**；
+3. 特别地, 当 $z=x>0$ 时, $\mathrm{Ln}z$ 的主值 $\ln z=\ln x$ 就是实变数对数函数。
 ####三种对数函数的联系与区别:
 函数|单值与多值|定义域|注解
 :--:|:--:|:--:|:--:
 $\ln x$|单|所有正实数|
-$\text{Ln}z$|多|所有非零复数|一个单值分支为lnz
+$\mathrm{Ln}z$|多|所有非零复数|一个单值分支为lnz
 $\ln z$|单|所有非零复数|z=x>0时，为lnx
 ####对数函数的基本性质
-1. $\text{Ln}(z_1z_2)=\text{Ln}z_1+\text{Ln}z_2$
-1. $\displaystyle\text{Ln}\frac{z_1}{z_2}=\text{Ln}z_1-\text{Ln}z_2$
-1. $\require{cancel}\cancel{\text{Ln}z^n=n\text{Ln}z}$
-1. $\require{cancel}\cancel{\text{Ln}\sqrt[n]{z}=\frac1n\text{Ln}z}$
+1. $\mathrm{Ln}(z_1z_2)=\mathrm{Ln}z_1+\mathrm{Ln}z_2$
+1. $\displaystyle\mathrm{Ln}\frac{z_1}{z_2}=\mathrm{Ln}z_1-\mathrm{Ln}z_2$
+1. $\require{cancel}\cancel{\mathrm{Ln}z^n=n\mathrm{Ln}z}$
+1. $\require{cancel}\cancel{\mathrm{Ln}\sqrt[n]{z}=\frac1n\mathrm{Ln}z}$
 1. $\displaystyle\frac{d\ln z}{dz}=\frac1z$
 ####对数函数的单值化:
 相应与幅角函数的单值化，我们也可以将对数函数单值化:
 
 考虑复平面除去负实轴（包括0）而得的区域 $D$。显然，在 $D$ 内，对数函数可以分解为无穷多个单值连续分支。
-\[w=\text{Ln}z=\ln|z|+i\text{arg}z+2k\pi i=\ln z+2k\pi i\]
+\[w=\mathrm{Ln}z=\ln|z|+i\mathrm{arg}z+2k\pi i=\ln z+2k\pi i\]
 由于对数函数的每个单值连续分支都是解析的，所以我们也将它的连续分支称为解析分支。
 
 我们也称对数函数是一个无穷多值解析函数。
 
 我们称原点和无穷远点是对数函数的无穷阶支点(对数支点) 特点：
-1. 当 $z$ 绕它们连续变化一周时，$\text{Ln}z$ 连续变化到其它值；
+1. 当 $z$ 绕它们连续变化一周时，$\mathrm{Ln}z$ 连续变化到其它值；
 1. 不论如何沿同一方向变化，永远不会回到同一个值。
 ###iii.乘幂 $a^b$ 与幂函数
-设a为不等于0的一个复数，$b$ 为任意一个复数，定义乘幂 $a^b$ 为 $eb^{\text{Ln}a}$, 即
-\[a^b=eb^{\text{Ln}a}\]
-由于 $\text{Ln}a=\ln|a|+i(\text{arg}a+2k\pi)$ 是多值的,因而 $a^b$ 也是多值的。
+设a为不等于0的一个复数，$b$ 为任意一个复数，定义乘幂 $a^b$ 为 $eb^{\mathrm{Ln}a}$, 即
+\[a^b=eb^{\mathrm{Ln}a}\]
+由于 $\mathrm{Ln}a=\ln|a|+i(\mathrm{arg}a+2k\pi)$ 是多值的,因而 $a^b$ 也是多值的。
 
 当 $b$ 为整数时, 由于
-\[a^b=e^{b\text{Ln}a}=e^{b[\ln|a|+i(\text{arg}a+2k\pi)]}\\=e^{b(\ln|a|+i\text{arg}a)+2kb\pi i}=e^{b\ln a}\]
+\[a^b=e^{b\mathrm{Ln}a}=e^{b[\ln|a|+i(\mathrm{arg}a+2k\pi)]}\\=e^{b(\ln|a|+i\mathrm{arg}a)+2kb\pi i}=e^{b\ln a}\]
 所以这时 $a^b$ 具有单一的值。
 
 当 $b=p/q$ ($p$ 和 $q$ 为互质的整数, $q>0$) 时, 由于
-\[a^b=e^{\frac pq\ln|a|+i\frac pq(\text{arg}a+2k\pi)}\\=e^{\frac pq\ln|a|}\big[\cos\frac pq(\text{arg}a+2k\pi)+i\sin\frac pq(\text{arg}a+2k\pi)\big]\]
+\[a^b=e^{\frac pq\ln|a|+i\frac pq(\mathrm{arg}a+2k\pi)}\\=e^{\frac pq\ln|a|}\big[\cos\frac pq(\mathrm{arg}a+2k\pi)+i\sin\frac pq(\mathrm{arg}a+2k\pi)\big]\]
 $a^b$ 具有 $q$ 个值, 即当 $k=0,1\cdots(q-1)$ 时相应的各个值。
 
-除上述情况外此而外, 一般而论，ab具有无穷多个值
+除上述情况外此而外, 一般而论，$a^b$ 具有无穷多个值
+1. 当 $b$ 为正整数时 $n$ 根据定义: $a^n=e^{n\mathrm{Ln}a}=e^{\mathrm{Ln}a+\cdots+\mathrm{Ln}a}=e^{\mathrm{Ln}a}\cdots e^{\mathrm{Ln}a}=a\cdots a$
+2. 当 $b$ 为分数 $\displaystyle\frac1n$ 时, 有 $\displaystyle a^\frac1n=e^{\frac1n\mathrm{Ln}a}=e^{\frac1n\ln|a|}(\cos\frac{\mathrm{arg}a+2k\pi}n+i\sin\frac{\mathrm{arg}+2k\pi}n)\\\displaystyle=|a|^{\left|\frac1n\right|}(\cos\frac{\mathrm{arg}a+2k\pi}n+i\sin\frac{\mathrm{arg}+2k\pi}n)=\sqrt[n]a,其中k=1,2\cdots(n-1)$
+
+所以, 如果 $a=z$ 为一复变数, 就得到一般的幂函数 $w=z^b$; 当 $b=n与\frac1n$ 时, 就分别得到通常的幂函数 $w=z^n$ 及 $z=w^n$ 的反函数 $w=z^\frac1n=\sqrt[n]z$
+
+幂函数 $z^\frac1n=\sqrt[n]z$ 是一个多值函数, 具有 $n$ 个分支, 由于对数函数 $\mathrm{Ln}z$ 的各个分支在除去原点和复实轴的复平面内是解析的 因而不难看出它的各个分支在除去原点和负实轴的复平面内也是解析的 而且:
+\[(z^\frac1n)'=(\sqrt[n]z)'=(e^{\frac1n\mathrm{Ln}z})'=\frac1nz^{\frac1n-1}\]
+幂函数 $w=z^b$ (除去 $b=n$ 与 $\frac1n$ 两种情况外) 也是一个多值函数, 当 $b$ 为无理数或复数时, 是无穷多值, 同样的道理, 它的各个分支在去除原点和负实轴的复平面内也是解析的, 并且有 $(z^b)'=bz^{n-1}$
 ####幂函数的基本性质:
+###vi.三角函数和双曲函数
+由 **欧拉公式** 有
+\[e^{iy}=\cos y+i\sin y\quad e^{-iy}=\cos y-i\sin y\]
+将这两式相加与相减, 分别得到
+\[\cos y=\frac{e^{iy}+e^{-iy}}2\quad\sin y=\frac{e^{iy}-e^{-iy}}{2i}\]
+现将其推广到自变数取复值的情形, 定义
+\[\cos z=\frac{e^{iz}+e^{-iz}}2\quad\sin z=\frac{e^{iz}-e^{-iz}}{2i}\]
+当 $z$ 为实数时, 显然这与上式完全一致。
+####三角函数的性质
+#####(1).周期性
+由于 $e^z$ 是以 $2\pi i$ 为周期的周期函数,因此 $\cos z$ 和 $\sin z$ 以 $2\pi$ 为周期, 即
+\[\cos(z+2\pi)=\frac{e^{i(z+2\pi)}+e^{-i(z+2\pi)}}2=\cos z\]
+\[\sin(z+2\pi)=\frac{e^{i(z+2\pi)}-e^{-i(z+2\pi)}}2=\sin z\]
+#####(2).奇偶性
+$\cos z$ 是偶函数, $\sin z$ 是奇函数
+\[\cos(-z)=\cos z\quad\sin(-z)=-\sin z\]
+#####(3).求导
+\[(\cos z)'=-\sin z\quad(\sin z)'=\cos z\]
+#####(4).欧拉公式
+\[e^{iz}=\cos z+i\sin z\]
+普遍正确, 即对于复数, 欧拉公式仍然成立。
+#####(5).加法定理
+由定义和指数函数的加法定理，成立：
+\[\begin{cases}\cos(z_1+z_2)=\cos z_1\cos z_2-\sin z_1\sin z_2\\
+\sin(z_1+z_2)=\sin z_1\cos z_2+\cos z_1\sin z_2\\
+\sin^2 z+\cos^2 z=1\end{cases}\]
+由此得
+\[\cos(x+iy)=\cos x\cos iy-\sin x\sin iy\]
+\[\sin(x+iy)=\sin x\cos iy+\cos x\sin iy\]
+当 $z$ 为纯虚数 $iy$ 时, 有
+\[\begin{cases}\cos iy=\displaystyle\frac{e^{-y}+e^y}2=\cosh y
+\\\sin iy=\displaystyle\frac{e^{-y}-e^y}{2i}=i\sinh y\end{cases}\]
+所以
+\[\cos(x+iy)=\cos x\cosh y-i\sin x\sinh y\\\sin(x+iy)=\sin x\cosh y+i\cos x\sinh y\]
+这两个公式对于计算 $\cos z$ 与 $\sin z$ 的值有用。
+
+当 $y\to\infty$ 时， $|\sin iy|$ 和 $|\cos iy|$ 都趋于无穷大，因此，$|\sin z|\leq1$ 和 $|\cos z|\leq1$ 在复数范围内不再成立。
+
+其它复变数三角函数的定义如下:
+\[\tan z=\frac{\sin z}{\cos z}\quad\cot z=\frac{\cos z}{\sin z}\\
+\sec z=\frac1{\cos z}\quad\csc z=\frac1{\sin z}\]
+与三角函数密切相关的是 **双曲函数**, 定义
+\[\cosh z=\frac{e^z+e^{-z}}2\quad\sinh z=\frac{e^z-e^{-z}}2\tanh z=\frac{e^z-e^{-z}}{e^z+e^{-z}}\]
+分别称为 **双曲余弦**, **正弦和正切函数**。
+
+$\cosh z$ 和 $\sinh z$ 都是以 $2\pi i$ 为周期的函数，$\cosh z$ 偶函数，$\sinh z$ 为奇函数。他们都是复平面内的解析函数。
+
+导数分别为:
+\[(\cosh z)'=\sinh z\quad(\sinh z)'=\cosh z\]
+不难证明
+\[\cosh iy=\cos y,\sinh iy=i\sin y\]
+及
+\[\cosh(x+iy)=\cosh x\cos y+i\sinh x\sin y\\\sinh(x+iy)=\sinh x\cos y+i\cosh x\sin y\]
+###v.反三角函数与反双曲函数
+反三角函数定义为三角函数的反函数, 设 $z=\cos w$ 则称 $w$ 为 $z$ 的反余弦函数, 记作:
+\[w=\mathrm{Arccos}z\]
+由 $z=\cos w=\displaystyle\frac12(e^{iw}+e^{-iw})$, 得二次方程 $e^{2iw}-2ze^{iw}+1=0$, 它的根为 $e^{iw}=z+\sqrt{z^2+1}$ 应理解为 **双值函数**。两端取对数得:
+\[\mathrm{Arccos}z=-i\mathrm{Ln}(z+\sqrt{z^2-1})\]
+显然 $\mathrm{Arccos}z$ 是一个多值函数，它的多值性正是 $\cos w$ 的偶性和周期性的反映。
+
+用同样的方法可以定义反正弦和反正切函数:
+\[\begin{cases}\mathrm{Arcsin}z=-i\mathrm{Ln}(iz+\sqrt{1-z^2})\\\mathrm{Arctan}z=-\displaystyle\frac i2\mathrm{Ln}\frac{1+iz}{1-iz}\end{cases}\]
+反双曲函数定义为双曲函数的反函数。用与推导反三角函数表达式完全类似的步骤, 可以得到各反双曲函数的表达式：
+\[\begin{cases}\mathrm{Arsinh}z=\mathrm{Ln}(z+\sqrt{z^2+1})&反双曲正弦\\\mathrm{Arcosh}z=\mathrm{Ln}(z+\sqrt{z^2-1})&反双曲余弦\\\mathrm{Artanh}z=\displaystyle\frac12\mathrm{Ln}\frac{1+z}{1-z}&反双曲正切\end{cases}\]
+它们都是多值函数。
+
+多值函数导引：幅角函数:
+因为初等复变多值函数的多值性是由于辐角的多值性引起的，所以我们先研究辐角函数:
+\[w=\mathrm{Arg}z(z\in C\setminus\{0\})\]
+它本身不是一般意义下的初等函数。$w=\mathrm{Arg}z$ 函数有无穷个不同的值:
+\[w=\mathrm{Arg}z=\mathrm{arg}z+2k\pi(k\in Z),z\neq0\]
+其中 $\mathrm{arg}z$ 表示 $\mathrm{Arg}z$ 的主值:(我们也把 $\mathrm{Arg}z$ 的任意一个确定的值记为 $\mathrm{arg}z$)
+\[-\pi<\mathrm{arg}z\leq\pi\]
+为了研究方便起见，我们把幅角函数在某些区域内分解为一些单值连续函数，每一个单值连续函数称为幅角函数在这区域内的一个单值连续分支。
+
+考虑复平面除去负实轴（包括0）而得的区域 $D$。显然，在 $D$ 内，$\mathrm{Arg}z$ 的主值 $\mathrm{arg}z$ 是一个单值连续函数。
+
+对一个固定的整数 $k$，$\mathrm{arg}z+2k\pi$ 也是一个单值连续函数 。
+
+因此，$w=\mathrm{Arg}z$ 在区域 $D$ 内可以分解成无穷多个单值连续函数，它们都是 $w=\mathrm{Arg}z$ 在 $D$ 内的单值连续分支。
+
+**结论**: 因此，对于幅角函数 $w=\mathrm{Arg}z$，0和无穷远点是特殊的两点。
+
+在复平面上，取连接0和无穷远点的一条无界简单连续曲线 $L$ 作为割线，得到一个区域 $D$，其边界就是曲线 $L$。则可以将 $\mathrm{arg}z$ 分解成一些连续分支：
+1. 当 $L$ 为负实轴时，幅角函数可以分解成无穷个单值连续分支；
+2. 一般区域见下图：
+
+因此，对于幅角函数 $w=\mathrm{Arg}z$ 可以分解成无穷个单值连续分支 $\mathrm{arg}+2k\pi(\mathrm{z_1}=\theta_1)$
+
+$\mathrm{Arg}z$ 在 $C$ 内上任一点（非原点）的各值之间的联系：通过作一条简单连续曲线围绕0或无穷远点，让 $z$ 从某点按一定方向沿曲线连续变动若干周后，回到该点时，$\mathrm{Arg}z$ 相应地可从幅角函数的一值连续变动到它在预先指定的其它任一值，即从 $\mathrm{Arg}z$ 的一个单值连续分支在该点的值，连续变动到预先指定的其它单值连续分支在该点的值。
