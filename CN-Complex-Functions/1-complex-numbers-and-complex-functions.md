@@ -32,45 +32,42 @@ $x$ 和 $y$ 分别称为 **实部** 和 **虚部**，分别记作:
 ####4.非零复数的三角表示
 向量的长度称为复数的 **模**, 定义为：
 \[\rho=|z|=\sqrt{a^2+b^2}\]
-非零复数与实轴正向之间的夹角称为复数的 **辐角**，记为 **Argz**
-\[\vec z=|z|(\cos Argz+i\sin Argz)=\rho(\cos\theta+\sin\theta)\]
+非零复数与实轴正向之间的夹角称为复数的 **辐角**，记为 **$\mathrm{Arg}z$**
+\[\vec z=|z|(\cos\mathrm{Arg}z+i\sin\mathrm{Arg}z)=\rho(\cos\theta+\sin\theta)\]
 注意：几个 **重要不等式**
 1. $|z_1+z_2|\leq|z_1|+|z_2|$
 1. $|z_1-z_2|\geq|z_1|-|z_2|$
 1. $||z_1|-|z_2||\leq|z_1+z_2|\leq|z_1|+|z_2|$
 1. $||z_1|-|z_2||\leq|z_1-z_2|\leq|z_1|+|z_2|$
 1. $|\Re z|\leq|z|\quad|\Im z|\leq|z|$
-\[Argz(z\neq0)=\begin{cases}\arctan\frac yx&x>0,y\gtreqqless0\\
-\pm\frac\pi2&x=0,y\gtrless0\\
-\arctan\frac yx\pm\pi&x<0,y\gtrless0\\
-\pi&x<0,y=0\end{cases}\\其中-\frac\pi2<\arctan\frac yx<\frac\pi2\]
+\[\mathrm{Arg}z(z\neq0)=\begin{cases}\arctan\displaystyle\frac yx&x>0,y\gtreqqless0\\\displaystyle\pm\frac\pi2&x=0,y\gtrless0\\\displaystyle\arctan\frac yx\pm\pi&x<0,y\gtrless0\\\pi&x<0,y=0\end{cases}\\其中-\frac\pi2<\arctan\frac yx<\frac\pi2\]
 1. 当 $z$ 落于第一四象限时，不变。
 1. 当 $z$ 落于第二象限时，加 $\pi$。
 1. 当 $z$ 落于第三象限时，减 $\pi$。
 #####三角表示的乘除法
-\[z_1=|z_1|(\cos Argz_1+i\sin Argz_1)\\z_2=|z_2|(\cos Argz_2+i\sin Argz_2)\]
-\[z_1z_2=|z_1||z_2|\big[\cos(Argz_1+Argz_2)+i\sin(Argz_1+Argz_2)\big]\]
-\[|z_1z_2|=|z_1||z_2|\quad Arg(z_1z_2)=Argz_1+Argz_2\]
+\[z_1=|z_1|(\cos \mathrm{Arg}z_1+i\sin \mathrm{Arg}z_1)\\z_2=|z_2|(\cos \mathrm{Arg}z_2+i\sin \mathrm{Arg}z_2)\]
+\[z_1z_2=|z_1||z_2|\big[\cos(\mathrm{Arg}z_1+\mathrm{Arg}z_2)+i\sin(\mathrm{Arg}z_1+\mathrm{Arg}z_2)\big]\]
+\[|z_1z_2|=|z_1||z_2|\quad\mathrm{Arg}(z_1z_2)=\mathrm{Arg}z_1+\mathrm{Arg}z_2\]
 其中后一个式子应理解为 **集合相等**
 
 两个复数 **乘积的模** 等于它们的 **模相乘**，两个复数 **乘积的辐角** 等于它们的 **辐角相加**。
 
-几何意义: 将复数 $z_1$ 按逆时针方向旋转一个角度 $Argz_2$，再将其伸缩到 $|z_2|$ 倍。
+几何意义: 将复数 $z_1$ 按逆时针方向旋转一个角度 $\mathrm{Arg}z_2$，再将其伸缩到 $|z_2|$ 倍。
 
 同理，对除法，也有：
-\[z_1/z_2=|z_1|/|z_2|\big[\cos(Argz_1-Argz_2)+i\sin(Argz_1-Argz_2)\big]\]
+\[z_1/z_2=|z_1|/|z_2|\big[\cos(\mathrm{Arg}z_1-\mathrm{Arg}z_2)+i\sin(\mathrm{Arg}z_1-\mathrm{Arg}z_2)\big]\]
 即
-\[|z_1/z_2|=|z_1|/|z_2|\quad Arg(z_1/z_2)=Argz_1-Argz_2\]
+\[|z_1/z_2|=|z_1|/|z_2|\quad\mathrm{Arg}(z_1/z_2)=\mathrm{Arg}z_1-\mathrm{Arg}z_2\]
 其中后一个式子也应理解为 **集合相等**。
 
 两个复数的 **商的模** 等于它们的 **模的商**，两个复数的 **商的辐角** 等于被除数与除数的 **辐角之差**。
 #####三角表示的乘幂
-\[z^n=|z|^n(\cos nArgz+i\sin nArgz)\]
-\[z^{-n}=\frac1{z^n}\Rightarrow z^{-n}=|z|^{-n}\big[\cos(-n Argz)+i\sin(-n Argz)\big]\]
+\[z^n=|z|^n(\cos n\mathrm{Arg}z+i\sin n\mathrm{Arg}z)\]
+\[z^{-n}=\frac1{z^n}\Rightarrow z^{-n}=|z|^{-n}\big[\cos(-n \mathrm{Arg}z)+i\sin(-n \mathrm{Arg}z)\big]\]
 **棣模佛(De Moivre)公式**:
 \[(\cos\theta+i\sin\theta)^n=\cos n\theta+i\sin n\theta\]
 进一步，有:
-\[z^{\frac1z}=\sqrt[n]{|z|}\big[\cos(\frac1nArgz)+i\sin(\frac1nArgz)\big]\\=\big[\cos(\frac1nArgz+\frac{2\pi k}n)+i\sin(\frac1nArgz+\frac{2\pi k}n)\big]\]
+\[z^{\frac1z}=\sqrt[n]{|z|}\big[\cos(\frac1n\mathrm{Arg}z)+i\sin(\frac1n\mathrm{Arg}z)\big]\\=\big[\cos(\frac1n\mathrm{arg}z+\frac{2\pi k}n)+i\sin(\frac1n\mathrm{arg}z+\frac{2\pi k}n)\big]\]
 可以看到，$k=0,1,2,\cdots,n-1$ 时，可得n个不同的值，即 $z$ 有n个n次方根，其 **模相同**，**辐角相差一个常数**，**均匀分布** 于一个圆上。$k$ 取其它整数时，这些根又会 **重复出现**。
 ###ii.复球面与无穷大
 ####1.南极北极的定义
