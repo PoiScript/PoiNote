@@ -93,3 +93,62 @@ $u=g(x)$ 在点 $x$ 可导, $y=f(u)$ 在点 $u=g(x)$ 可导, 则复合函数 $y=
 
 类似地, 二阶导数的导数称为三阶导数, 依次类推, $n-1$ 阶导数的导数称为 $n$ 阶导数, 分别记作 $y''',y^{(4)}\cdots y^{(n)}$ 或 $\displaystyle\frac{d^3y}{dx^3},\frac{d^4y}{dx^4}\cdots\frac{d^ny}{dx^n}$
 ###ii.高阶导数的运算法则
+设函数 $u=u(x)$ 及 $v=v(x)$ 都有 $n$ 阶导数, 则
+\[\begin{array}{ll}
+1.&(u\pm v)^{(n)}=u^{(n)}\pm v^{(n)}\\
+2.&(Cu)^{(n)}=Cu^{(n)}(C为常数)\\
+3.&(uv)^{(n)}=u^{(n)}+nu^{(n-1)}v'+\frac{n(n-1)}{2!}u^{(n-2)}v''+\\
+&+\cdots+\frac{n(n-1)\cdots(n-k+1)}{k!}u^{(n-k)}v^{(k)}\\
+&+\cdots+uv^{(n)}\,\text{莱布尼兹(Leibniz)公式}
+\end{array}\]
+##IV.隐函数和参数方程求导
+###i.隐函数的导数
+若由方程 $F(x,y)=0$, 可确定 $y$ 是 $x$ 的函数, 则称该函数为 **隐函数**.
+
+由 $y=f(x)$ 表示的函数, 称为 **显函数**.
+可确定显函数
+
+隐函数 **求导方法**: $F(x,y)=0$ 两边对 $x$ 求导, 得到含导数 $y$ 的方程 $\displaystyle\frac d{dx}F(x,y)=0$
+###ii.由参数方程确定的函数的导数
+若参数方程 $\displaystyle\begin{cases}x=\varphi(t)\\y=\psi(t)\end{cases}$ 可确定一个 $y$ 与 $x$ 之间的函数关系, $\varphi(t),\psi(t)$ 可导, 且 $[\varphi'(t)]^2+[\psi'(t)]^2\ne0$, 则 $\varphi'(t)\ne0$ 时, 有
+\[\frac{dy}{dx}=\frac{dy}{dt}\cdot\frac{dt}{dx}=\frac{dy}{dt}\cdot\frac1{\frac{dx}{dt}}=\frac{\psi'(t)}{\varphi'(t)}\]
+$\psi'(t)$ 时, 有
+\[\frac{dx}{dy}=\frac{dx}{dt}\cdot\frac{dt}{dy}=\frac{dx}{dt}\frac1{\frac{dy}{dt}}=\frac{\varphi'(t)}{\psi'(t)}\]
+(此时看成 $x$ 是 $y$ 的函数 )
+
+若上述参数方程中 $\varphi(t),\psi(t)$ 二阶可导, 且 $\varphi'(t)\ne0$, 则由它确定的函数 $y=f(x)$ 可求二阶导数. 利用新的参数方程 $\displaystyle\begin{cases}x=\varphi(t)\\\displaystyle\frac{dy}{dx}=\frac{\psi'(t)}{\varphi'(t)}\end{cases}$, 可得
+\[\frac{d^2y}{dx^2}=\frac d{dx}\left(\frac{dy}{dx}\right)=\frac d{dt}\left(\frac{\psi'(t)}{\varphi'(t)}\right)\cdot\frac{dt}{dx}\\=\frac{\psi''(t)\varphi'(t)-\psi'(t)\varphi''(t)}{\varphi'^2(t)}\cdot\frac1{\varphi'(t)}\]
+即:
+\[\frac{d^2y}{dx^2}=\frac{\psi''(t)\varphi'(t)-\psi'(t)\varphi''(t)}{\varphi'^3(t)}\]
+**注意**: $\displaystyle\frac{dy}{dx}=\frac{\psi'(t)}{\varphi'(t)},\frac{d^2y}{dx^2}\ne\left(\frac{\psi'(t)}{\varphi'(t)}\right)'$
+###iii.相关变化率
+$x=x(t),y=y(t)$ 为两可导函数, $x,y$ 之间有联系, 则 $\displaystyle\frac{dx}{dt},\frac{dy}{dt}$ 之间也有联系, 称为 **相关变化率**
+
+相关变化率问题解法:
+1. 找出相关变量的关系式
+1. 对 $t$ 求导
+1. 得相关变化率之间的关系式
+1. 求出未知的相关变化率
+2.  第二章
+##V.函数的微分
+###i.微分的概念
+定义: 若函数 $y=f(x)$ 在点 $x_0$ 的增量可表示为
+\[\Delta y=f(x_0+\Delta x)-f(x_0)=A\Delta x+o(\Delta x),A为不依赖于\Delta x的常数\]
+则称函数 $y=f(x)$ 在点 $x_0$ **可微**, 而 $A\Delta x$ 称为 $f(x)$ 在 $x_0$ 的微分, 记作 $dy$, 即
+\[dy=A\Delta x\]
+**定理**: 函数 $y=f(x)$ 在点 $x_0$ 可微的充要条件是 $y=f(x)$ 在点 $x_0$ 处可导, 且 $A=f'(x_0)$, 即 $dy=f'(x_0)\Delta x$
+
+**说明**: $\Delta y=f'(x_0)\Delta x+o(\Delta x)\quad dy=f'(x_0)\Delta x$ 当 $f'(x_0)\ne0$ 时,
+\[\lim_{\Delta x\to0}\frac{\Delta y}{dy}=\lim_{\Delta x\to0}\frac{\Delta y}{f'(x_0)\Delta x}\\=\frac1{f'(x_0)}\lim_{\Delta x\to0}\frac{\Delta y}{\Delta x}=1\]
+所以 $\Delta x\to0$ 时 $\Delta y$ 与 $dy$ 是等价无穷小, 故当 $|\Delta x|$
+很小时, 有近似公式 $\Delta y\approx dy$
+
+**微分的几何意义**: 切线纵坐标的增量
+\[dy=f'(x_0)\Delta x=\tan\alpha\cdot\Delta x\]
+当 $\Delta x$ 很小时, $\Delta y\approx dy$
+记
+记作
+自变量的微分,
+则有
+导数也叫作微商
+从而

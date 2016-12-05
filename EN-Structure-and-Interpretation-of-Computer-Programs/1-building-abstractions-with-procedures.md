@@ -37,3 +37,16 @@ We say that the name identifies a **variable** whose value is the object.
 (define size 2)
 ```
 Define is our language’s simplest means of **abstraction**, for it allows us to use simple names to **refer to** the results of compound operations.
+##iv.Compound Procedures
+1. **Numbers** and **arithmetic** operations are **primitive** data and **procedures**.
+1. Nesting of combinations provides a means of combining operations.
+1. Definitions that associate names with values provide a limited means of abstraction
+
+Now we will learn about **procedure definitions**, a much more powerful abstraction technique by which a compound operation can be given a name and then referred to as a unit.
+```
+(define (square x) (* x x))
+```
+The general form of a procedure definition is
+```
+(define (<name> <formal parameters>) <body>)
+```
