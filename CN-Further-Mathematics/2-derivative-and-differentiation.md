@@ -129,7 +129,6 @@ $x=x(t),y=y(t)$ 为两可导函数, $x,y$ 之间有联系, 则 $\displaystyle\fr
 1. 对 $t$ 求导
 1. 得相关变化率之间的关系式
 1. 求出未知的相关变化率
-2.  第二章
 ##V.函数的微分
 ###i.微分的概念
 定义: 若函数 $y=f(x)$ 在点 $x_0$ 的增量可表示为
@@ -143,12 +142,22 @@ $x=x(t),y=y(t)$ 为两可导函数, $x,y$ 之间有联系, 则 $\displaystyle\fr
 所以 $\Delta x\to0$ 时 $\Delta y$ 与 $dy$ 是等价无穷小, 故当 $|\Delta x|$
 很小时, 有近似公式 $\Delta y\approx dy$
 
-**微分的几何意义**: 切线纵坐标的增量
-\[dy=f'(x_0)\Delta x=\tan\alpha\cdot\Delta x\]
-当 $\Delta x$ 很小时, $\Delta y\approx dy$
-记
-记作
-自变量的微分,
-则有
-导数也叫作微商
-从而
+###ii.微分运算法则
+设 $u(x),v(x)$ 均可微, 则
+\[\begin{array}{ll}
+1.d(u\pm v)=du\pm dv&2.d(Cu)=Cdu(C为常数)\\
+3.d(uv)=vdu+udv&4.d(\frac uv)=\frac{vdu-udv}{v^2}(v\ne0)
+\end{array}\]
+**复合函数的微分**: $y=f(u),u=\varphi(x)$ 分别可微, 则复合函数 $y=f[\varphi(x)]$ 的微分为 $dy=y'_ xdx=f'(u)\underbrace{\varphi'(x)dx}_{du\,微分形式不变},dy=f'(u)du$
+###iii.微分在近似计算中的应用
+\[\Delta y=f'(x_0)\Delta x+o(\Delta x)\]
+当 $\Delta x$ 很小时, 得近似等式:
+\[\Delta y=f(x_0+\Delta x)-f(x_0)\approx f'(x_0)\Delta x\\f(x_0+\Delta x)\approx f(x_0)+f'(x_0)\Delta x\xrightarrow{x=x_0+\Delta x}\\f(x)\approx f(x_0)+f'(x_0)(x-x_0)\]
+###iv.微分在估计误差中的应用
+某量的精确值为 $A$, 其近似值为 $a$, $A-a$ 称为 $a$ 的 **绝对误差**, $\displaystyle\frac{|A-a|}{|a|}$ 称为 $a$ 的 **相对误差**
+
+若 $|A-a|\le\delta_A$, $\delta_A$ 称为测量 $A$ 的 **绝对误差限**, $\displaystyle\frac{\delta_A}{|a|}$ 称为测量 $A$ 的 **相对误差限**
+
+**误差传递公式**: 若直接测量某量得 $x$, 已知测量误差限为 $\delta_x$ 按公式 $y=f(x)$ 计算 $y$ 值时的误差
+\[|\Delta y|\approx|dy|=|f'(x)|\cdot|\Delta x|\le|f'(x)|\cdot\delta_x\]
+故 $y$ 的绝对误差限约为 $\delta_y\approx|f'(x)|\cdot\delta_x$, 相对误差限约为 $\displaystyle\frac{\delta_y}{|y|}\approx\left|\frac{f'(x)}{f(x)}\right|\cdot\delta_x$
