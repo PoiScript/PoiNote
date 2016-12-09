@@ -106,5 +106,100 @@ $F(b)-F(a)=F'(\eta)(b-a)\ne0(a<\eta<b)$, 要证 $\displaystyle\underbrace{\frac{
 其中
 \[R_n(x)=\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1}\tag 4\]
 这里的 $\xi$ 是 $x_0$ 与 $x$ 之间的某个值
-1. 当 $n=0$ 时, 公式(3) 变成拉格朗日中值公式 $f(x)=f(x_0)+f'(\xi)(x-x_0)(\xi在x_0与x之间)$
+1. 当 $n=0$ 时, 公式(3) 变成拉格朗日中值公式: $f(x)=f(x_0)+f'(\xi)(x-x_0)(\xi在x_0与x之间)$
 1. 公式(4) 称为 **拉格郎日余项**.
+####麦克劳林公式:
+在泰勒公式中若取 $x_0=0,\xi=\theta x(0<\theta<1)$ 则有
+\[f(x)=f(0)+f'(0)x+\frac{f''(0)}{2!}+\cdots+\frac{f^{(n)}}{n!}x^n+\frac{f^{(n+1)}(\theta x)}{(n+1)!}x^{n+1}\]
+称为 **麦克劳林(Maclaurin)公式**. 由此得近似公式
+\[f(x)\approx f(0)+f'(0)x+\frac{f''(0)}{2!}x^2+\cdots+\frac{f^{(n)}(0)}{n!}x^n\]
+若在公式成立的区间上 $\left|f^{(n+1)}(x)\right|\le M$, 则有误差估计式
+\[\left|R_n(x)\right|\le\frac M{(n+1)!}\left|x\right|^{n+1}\]
+####几个初等函数的麦克劳林公式
+#####(1).$f(x)=e^x$
+\[\because f^{(k)}(x)=e^x,f^{(k)}(0)=1(k=1,2,\cdots)\\\therefore e^x=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots+\frac{x^n}{n!}+R_n(x)\]
+**其中**: $\displaystyle R_n(x)=\frac{e^{\theta x}}{(n+1)!}(0<\theta<1)$
+#####(2).$f(x)=\sin x$
+\[\because f^{(k)}(x)=\sin(x+k\cdot\frac\pi2)\\f^{(k)}(0)=\sin\frac\pi2=\begin{cases}0&k=2m\\(-1)^{m-1}&k=2m-1\end{cases}(m=1,2\cdots)\\\therefore\sin x=x-\frac{x^3}{3!}+\frac{x^5}{5!}+\cdots+(-1)^{m-1}\frac{x^{2m-1}}{(2m-1)!}+R_{2m}(x)\]
+**其中**: $\displaystyle R_{2m}(x)=\frac{(-1)^m\cos(\theta x)}{(2m+1)!}x^{2m+1}(0<\theta<1)$
+#####(3).$f(x)=\cos x$
+**类似可得**:
+\[\cos x=1-\frac{x^2}{2!}+\frac{x^4}{4!}+\cdots+(-1)^m\frac{x^{2m}}{(2m)!}+R_{2m+1}(x)\]
+**其中**: $\displaystyle R_{2m+1}(x)=\frac{(-1)^{m+1}\cos(\theta x)}{(2m+2)!}x^{2m+2}(0<\theta<1)$
+#####(4).$f(x)=(1+x)^{a}(x>-1)$
+\[\because f^{(k)}=a(a-1)\cdots(a-k+1)(1+x)^{a-k}\\f^{(k)}(0)=a(a-1)\cdots(a-k+1)(k=1,2\cdots)\\\therefore(1+x)^a=1+ax+\frac{a(a-1)}{2!}+\cdots+\frac{a(a-1)\cdots(a-n+1)}{n!}x^n+R_n(x)\]
+**其中**: $\displaystyle R_n(x)=\frac{a(a-1)\cdots(a-n)}{(n+1)!}(1+\theta x)^{a-n-1}x^{n+1}(0<\theta<1)$
+#####(5).$f(x)=\ln(1+x)(x>-1)$
+已知
+\[f^{(k)}(x)=(-1)^{k-1}\frac{(k-1)!}{(1+x)^k}(k=1,2\cdots)\]
+类似可得
+\[\ln(1+x)=x-\frac{x^2}2+\frac{x^3}3+\cdots+(-1)^{n-1}\frac{x^n}n+R_n(x)\]
+**其中**: $\displaystyle R_n(x)=\frac{(-1)^n}{n+1}\frac{x^{n+1}}{(1+\theta x)^{n+1}}(0<\theta<1)$
+###iii.泰勒公式的应用
+####1.在近似计算中的应用
+\[f(x)\approx f(0)+f'(0)+\frac{f''(0)}{2!}+\cdots+\frac{f^{(n)}}{n!}x^n\]
+**误差**: $\left|R_n(x)\right|\le\displaystyle\frac M{(n+1)!}|x|^{n+1}$
+
+$M$ 为 $|f^{(n+1)}(x)|$ 在包含 $0,x$ 的某区间上的上界.
+
+**需解问题的类型**:
+1. 已知 x 和误差限 , 要求确定项数 n ;
+1. 已知项数 n 和 x , 计算近似值并估计误差;
+1. 已知项数 n 和误差限 , 确定公式中 x 的适用范围.
+####2.利用泰勒公式求极限
+####3.利用泰勒公式证明不等式
+##IV.函数的单调性与曲线的凹凸性
+###i.函数单调性的判定法
+导数是图形上切线的斜率，当斜率为正时，曲线上升；当斜率为负时，曲线下降。
+
+**定理1**: 设 $y=f(x)$ 在区间 $I=[a,b]$ 上连续，在 $(a,b)$ 内可导，则
+1. $f'(x)>0$ 时 $f(x)$ 在区间 $[a,b]$ 上 **单调增加**
+1. $f'(x)<0$ 时 $f(x)$ 在区间 $[a,b]$ 上 **单调减少**
+
+**证**: 无妨设 $f'(x)>0,x\in I$, 任取 $x_1,x_2\in(x_1<x_2)$, 由拉格朗日中值定理得
+\[f(x_2)-f(x_1)=f'(\xi)(x_2-x_1)>0,\xi\in(x_1,x_2)\subset I\]
+故 $f(x_1)<f(x_2)$, 这说明 $f(x)$ 在 $I$ 内单调递增.
+
+**说明**:
+1. 单调区间的分界点除驻点外,也可是导数不存在的点.
+1. 如果函数在某驻点两边导数同号, 则不改变函数的单调性 .
+###ii.曲线的凹凸与拐点
+####1.凹凸性的定义
+**定义**: 设函数 $f(x)$ 在区间 $I$ 上连续, $\forall x_1,x_2\in I$
+1. 若恒有 $\displaystyle f(\frac{x_1+x_2}2)<\frac{f(x_1)+f(x_2)}2$ 则称图形是 **凹** 的;
+1. 若恒有 $\displaystyle f(\frac{x_1+x_2}2)>\frac{f(x_1)+f(x_2)}2$ 则称图形是 **凸** 的.
+
+连续曲线上有切线的凹凸分界点称为 **拐点**.
+
+**性质**:
+1. 凹弧在其切线上方，凸弧在其切线下方。
+1. 凹弧切线的斜率递增，凸弧切线的斜率递减。
+
+定理2.(凹凸判定法)
+设函数 $f(x)$ 在区间 $I$ 上有二阶导数
+1. 在 $I$ 内 $f''(x)>0$, 则 $f(x)$ 在 $I$ 内图形是凹的;
+1. 在 $I$ 内 $f''(x)<0$, 则 $f(x)$ 在 $I$ 内图形是凸的.
+
+**证**:
+$\forall x_1,x_2\in I$ 利用一阶泰勒公式可得
+\[f(x_1)=f\left(\frac{x_1+x_2}2\right)+f'\left(\frac{x_1+x_2}2\right)\left(x_1-\frac{x_1+x_2}2\right)\\+\frac{f''(\xi_1)}{2!}\left(x_1-\frac{x_1+x_2}2\right)^2\\f(x_2)=f\left(\frac{x_1+x_2}2\right)+f'\left(\frac{x_1+x_2}2\right)\left(x_2-\frac{x_1+x_2}2\right)\\+\frac{f''(\xi_2)}{2!}\left(x_2-\frac{x_1+x_2}2\right)^2\]
+两式相加
+\[f(x_1)+f(x_2)=2f\left(\frac{x_1+x_2}2\right)+\frac1{2!}\left(\frac{x_2-x_1}2\right)^2\left[f''(\xi_1)+f''(\xi_2)\right]\]
+当 $f''(x)\lessgtr0$ 时, $\displaystyle\frac{f(x_1)+f(x_2)}2\lessgtr f\left(\frac{x_1+x_2}2\right)$
+
+**说明**:
+1. 若在某点二阶导数为0, 在其两侧二阶导数不变号, 则曲线的凹凸性不变.
+1. 拐点的判别法: 设曲线 $f(x)$, $f''(x_0)=0)$ 或不存在, 但 $f''(x)$ 在 $x_0$ 两侧异号, 则点 $(x_0,f(x_0))$ 是曲线 $y=f(x)$ 的一个拐点.
+##V.函数的极值与最大值最小值
+###i.函数的极值及其求法
+**定义**: 设函数 $f(x)$ 在点 $x_0$ 的某个邻域 $U(x_0)$ 内有定义, 如果对于去心邻域 $\mathring U(x_0)$ 内的任一 $x$, 有
+\[f(x)<f(x_0)(或f(x)>f(x_0))\]
+那么称 $f(x_0)$ 时函数 $f(x)$ 的一个极大值(或极小值)
+1. 极大值 极小值统称为 **极值**, 使函数取得极值的点 $x_0$ 称为 **极值点**
+1. 极值点一定是区间的内点。
+1. 极值是局部概念，是局部的最值。
+
+**必要条件:定理(费马定理)** 若 $f(x)$ 在其极值点 $x_0$ 可导, 则 $f'(x0)=0$
+1. 导数为零的点称为函数的驻点。
+1. 极值点一定是驻点或不可导点。
+1. 驻点或不可导点不一定是极值点。
