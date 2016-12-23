@@ -42,4 +42,29 @@ $s(z)$ 称为级数 $\displaystyle\sum_{n=1}^\infty f_n(z)$ 的 **和函数**
 一个幂级数的收敛情况有3种:
 1. 对所有的正实数都是收敛的, 这时, 根据阿贝尔定理可知级数在复平面内处处绝对收敛.
 2. 对所有的正实数除 $z=0$ 外都是发散的, 这时, 级数在复平面内除原点外处处发散.
-3. 既存在使级数收敛的正实数, 也存在使级数发散的正实数. 设 $z=\alpha(正实数)$ 时, 级数收敛, $z=\beta(正实数)$ 时, 级数发散, 那么在以原点为中心, $\alpha$ 为半径的圆周 $C_\alpha$ 内, 级数绝对收敛; 在以原点为中心, $\beta$ 为半径的圆周 $C_\beta$ 外, 级数发散. 显然 $\alpha<\beta$ 否则, 级数将在 $\alpha$ 处发散.
+3. 既存在使级数收敛的正实数, 也存在使级数发散的正实数. 设 $z=\alpha(正实数)$ 时, 级数收敛, $z=\beta(正实数)$ 时, 级数发散, 那么在以原点为中心, $\alpha$ 为半径的圆周 $C_\alpha$ 内, 级数绝对收敛; 在以原点为中心, $\beta$ 为半径的圆周 $C_\beta$ 外, 级数发散. 显然 $\alpha<\beta$ 否则, 级数将在 $\alpha$ 处发散. 发散和收敛区域的边界的圆周 $C_R$ 称为幂级数的收敛圆. 在收敛圆的内部, 级数绝对收敛; 在收敛圆的外部, 级数发散. 收敛圆的的半径 $R$ 称为 收敛半径. 对幂级数来说, 它的收敛范围是以 $z=a$ 为中心的圆域. 在收敛圆的圆周上是收敛还是发散, 不能作出一般的结论, 要对具体级数进行具体分析.
+###3.收敛半径的求法
+####定理二(比值法)
+如果 $\displaystyle\lim_{n\to\infty}\left|\frac{c_{n+1}}{c_n}\right|=\lambda\ne0$, 那么收敛半径 $R=\displaystyle\frac1\lambda$
+####定理三(根值法)
+如果 $\displaystyle\lim_{n\to\infty}\sqrt[n]{|c_n|}=\mu\ne0$, 那么收敛半径 $R=\displaystyle\frac1\mu$
+###4.幂级数的运算和性质
+像实变幂级数一样, 复变幂级数也能进行有理运算. 具体来说
+\[f(z)=\sum_{n=0}^\infty a_nz^n,R=r_1,g(z)=\sum^\infty_{n=0}b_nz^n,R=r_2\]
+那么在以原点为中心, $r_1,r_2$ 钟较小的一个为半径的院内的圆内, 这两个幂级数可以像多项式那样进行相加, 相减, 相乘与积. 在各种情况, 所得到的幂级数的收敛半径大于或等于 $r_1$ 与 $r_2$ 中较小的一个. 也就是
+\[f(z)\pm g(z)=\sum^\infty_{n=0}a_nz^n\pm\sum^\infty_{n=0}b_nz^n=\sum^\infty_{n=0}(a_n\pm b_n)z^n,|z|<R\\f(z)g(z)=\left(\sum^\infty_{n=0}a_nz^n\right)\left(\sum^\infty_{n=0}b_nz^n\right)\\=\sum^\infty_{n=0}(a_nb_0+a_{n-1}b_1+a_{n-2}b_1+\cdots+a_0b_n)z^n,|z|<R\]
+这里 $R=\max(r_1,r_2)$
+####定理四
+设幂级数 $\displaystyle\sum^\infty_{n=0}c_n(z-z_0)^n$ 的收敛半径为 $R$, 那么
+
+**1**.它的和函数 $f(z)$, 即
+\[f(z)=\sum^\infty_{n=0}c_n(z-a)^n\]
+是收敛圆: $|z-a|<R$ 内的解析函数.
+
+**2**.$f(z)$ 在收敛圆内的导数可将其幂级数逐项求导得到, 即
+\[f'(z)=\sum^\infty_{n=1}nc_n(z-a)^{n-1}\]
+
+**3**.$f(z)$ 在收敛圆内可以逐项积分, 即
+\[\int_Cf(z)dz=\sum^\infty_{n=0}c_n\int_C(z-a)^ndz,C\in|z-a|<R\]
+或
+\[\int_a^zf(\xi)d\xi=\sum^\infty_{n=0}\frac{c_n}{n+1}(z-a)^{n+1}\]
