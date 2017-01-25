@@ -4,21 +4,27 @@
 
 ### 1. 基 2 时间抽取 FFT 算法原理
 
-\[X[m]=\sum^{N-1}_{k=0}x[k]W^{km}_N,m=0,1\cdots N-1\tag{DFT}\]
+$$X[m]=\sum^{N-1}_{k=0}x[k]W^{km}_N,m=0,1\cdots N-1$$
 
-\[X[m]=\sum^{N/2-1}_{r=0}x[2r]W^{2rm}_N + \sum^{N/2-1}_{r=0}x[2r+1]W^{(2r+1)m}_N\tag{奇偶顺序}\]
+$$X[m]=\sum^{N/2-1}_{r=0}x[2r]W^{2rm}_N + \sum^{N/2-1}_{r=0}x[2r+1]W^{(2r+1)m}_N$$
 
-\[令:\,x[2r]=x_1[r],x[2r+1]=x_2[r]\]
+令:
 
-\[X[m]=\sum^{N/2-1}_{r=0}x_1[r]W^{2rm}_N + W^m_N\sum^{N/2-1}_{r=0}x_2[r]W^{2rm}_N\]
+$$\,x[2r]=x_1[r],x[2r+1]=x_2[r]$$
 
-\[W^{2rm}_N=W^{rm}_{N/2}\tag{旋转因子的可微性}\]
+$$X[m]=\sum^{N/2-1}_{r=0}x_1[r]W^{2rm}_N + W^m_N\sum^{N/2-1}_{r=0}x_2[r]W^{2rm}_N$$
 
-\[**X[m]=x_1[m]+W^m_Nx_2[m]**\]
+旋转因子的可微性:
 
-\[W^{mk+N/2}_N=-W^{mk}_N,(W^{mk}_N)^*=W^{-mk}_N\tag{旋转因子的对称性}\]
+$$W^{2rm}_N=W^{rm}_{N/2}$$  
 
-\[**X[m+\frac N2]=x_1[m+\frac N2]+W^{m+N/2}x_2[m+N/2]=x_1[m]-W^m_Nx_2[m]**\]
+$$**X[m]=x_1[m]+W^m_Nx_2[m]**$$
+
+旋转因子的对称性:
+
+$$W^{mk+N/2}_N=-W^{mk}_N,(W^{mk}_N)^*=W^{-mk}_N$$
+
+$$**X[m+\frac N2]=x_1[m+\frac N2]+W^{m+N/2}x_2[m+N/2]=x_1[m]-W^m_Nx_2[m]**$$
 
 ### 2. 基 2 时间抽取 FFT 算法复杂度
 
@@ -46,26 +52,32 @@
 
 基 2 频率抽取 FFT 算法是将时域的序列以前后两部分按一定的方式组合后形成两个短序列,因此两个短序列的 DFT 合成的频域序列按奇偶顺序排列, 而不是按自然顺序排列.
 
-\[X[m]=\sum^{N-1}_{k=0}x[k]W^{km}_N,m=0,1\cdots N-1\tag{DFT}\]
+DFT:
 
-\[X[m]=\sum^{N/2-1}_{k=0}x[k]W^{km}_N+\sum^{N-1}_{k=N/2}x[k]W^{km}_Nx[k]W^{mk}_N\tag{自然顺序}\\=\sum^{N/2-1}_{k=0}(x[k]+W^{mN/2}x[k+N/2])W^{mk}_N\]
+$$X[m]=\sum^{N-1}_{k=0}x[k]W^{km}_N,m=0,1\cdots N-1$$
 
-\[\begin{cases}
+自然顺序:
+
+$$X[m]=\sum^{N/2-1}_{k=0}x[k]W^{km}_N+\sum^{N-1}_{k=N/2}x[k]W^{km}_Nx[k]W^{mk}_N$$
+
+$$=\sum^{N/2-1}_{k=0}(x[k]+W^{mN/2}x[k+N/2])W^{mk}_N$$
+
+$$\begin{cases}
 X[2r]=\sum^{N/2-1}_{k=0}(x[k]+x[k+N/2])W^{rk}_N\\
 X[2r+1]=\sum^{N/2-1}_{k=0}(x[k]-x[k+N/2])W^{rk}_N\cdot W^{rk}_N
-\end{cases}\tag{奇偶顺序}\]
+\end{cases}\$$
 
-\[令\,x_1[k]=x[k]+x[k+N/2])W^{rk}_N,\,x_2[k]=x[k]-x[k+N/2])W^{rk}_N\]
+$$x_1[k]=x[k]+x[k+N/2])W^{rk}_N,\,x_2[k]=x[k]-x[k+N/2])W^{rk}_N$$
 
-\[
+$$
 \begin{cases}
 X[2r]=\sum^{N/2-1}_{k=0}x_1[k]\cdot W^{rk}_{N/2}\\X[2r+1]=\sum^{N/2-1}_{k=0}x_2[k]W^{rk}_{N/2}
-\end{cases}\]
+\end{cases}$$
 
-\[\begin{cases}
+$$\begin{cases}
 x_1[k]=x[k]+x[k+N/2]\\
 x_2[k]=\{x[k]-x[k+N/2]\}W^k_N
-\end{cases}\]
+\end{cases}$$
 
 ## III. 实序列的 DFT 计算
 
@@ -73,39 +85,39 @@ x_2[k]=\{x[k]-x[k+N/2]\}W^k_N
 
 $x[k], h[k]$ 为 N 点实序列, $X[m], H[m]$ 分别为对应的 DFT.
 
-\[y[k]=x[k]+jh[k]\]
+$$y[k]=x[k]+jh[k]$$
 
-\[\begin{cases}
+$$\begin{cases}
 x[k]=\frac12\{y[k]+y^*[k]\}\\
 h[k]=\frac1{2j}\{y[k]-y^*[k]\}
-\end{cases}\]
+\end{cases}$$
 
-\[DFT\{y^*[k]\}=Y^*[(-m)_N]\]
+$$DFT\{y^*[k]\}=Y^*[(-m)_N]$$
 
-\[\begin{cases}
+$$\begin{cases}
 X[m]=\frac12\{Y[m]+Y^*[(-m)_N]\}\\
 H[m]=\frac1{2j}\{Y[m]-Y^*[(-m)_N]\}
-\end{cases}\]
+\end{cases}$$
 
 ### 2. 利用 N 点复序列的 FFT 算法计算 2N 点序列 DFT
 
 $y[k]$ 为一个长度为 2n 的序列
 
-\[\begin{cases}
+$$\begin{cases}
 x_1[k]=y[2k]&0\le k \le N-1\\
 x_2[k]=y[2k+1]&0\le k \le N-1
-\end{cases}\]
+\end{cases}$$
 
-\[\begin{cases}
+$$\begin{cases}
 Y[m]=X_1[m]+W^{m}_{2N}X_2[m]\\
 Y[m+N]=X_1[m]-W^{m}_{2N}X_2[m]
-\end{cases}\]
+\end{cases}$$
 
 ## IV. IDFT 的快速运算
 
-\[x[k]=IDFT\{X[m]\}=\frac1N\sum^{N-1}_{m=0}X[m]W^{-mk}_N\]
+$$x[k]=IDFT\{X[m]\}=\frac1N\sum^{N-1}_{m=0}X[m]W^{-mk}_N$$
 
-\[X[m]=DFT\{x[k]\}=\sum^{N-1}_{k=0}x[k]W^{mk}_N\]
+$$X[m]=DFT\{x[k]\}=\sum^{N-1}_{k=0}x[k]W^{mk}_N$$
 
 只要把 FFT 中的每个系数 $W^p_N$ 换成 $W^{-p}_N$, 并且在最后一级乘以 N/2 则时间抽取或频域抽取的 FFT 流图都可以用来实现 IDFT.
 
@@ -114,9 +126,11 @@ Y[m+N]=X_1[m]-W^{m}_{2N}X_2[m]
 
 可以利用 DFT 于 IDFT 定义的对称性, 直接用 FFT 计算 IFFT:
 
-\[x[k]=IDFT\{X[m]\}=\frac1N\sum^{N-1}_{m=0}X[m]W^{-mk}_N\\=\frac1N(\sum^{N-1}_{m=0}X^*[m]W^{mk}_N)^*=\frac1N(DFT\{X^*[m]\})^*\]
+$$x[k]=IDFT\{X[m]\}=\frac1N\sum^{N-1}_{m=0}X[m]W^{-mk}_N$$
 
-\[X[m]\xrightarrow{\{\}^*}X^*[m]\xrightarrow{FFT}Nx^*[k]\xrightarrow{\{\}^*}Nx[k]\xrightarrow{1/N}x[k]\]
+$$=\frac1N(\sum^{N-1}_{m=0}X^*[m]W^{mk}_N)^*=\frac1N(DFT\{X^*[m]\})^*$$
+
+$$X[m]\nRightarrow{\{\}^*}X^*[m]\nRightarrow{FFT}Nx^*[k]\nRightarrow{\{\}^*}Nx[k]\nRightarrow{1/N}x[k]$$
 
 ## VI. 混合基 FFT 算法
 
@@ -124,12 +138,11 @@ Y[m+N]=X_1[m]-W^{m}_{2N}X_2[m]
 
 若 $x[k]$ 长度为 $pg$ 则分解为 $p$ 个长度为 $q$ 的序列
 
-\[
-X[m]=X_1[m]+W^m_NX_2[m]+W^{2m}_NX_3[m]+\cdots+W^{(p-1)m}_NX_p[m]\]
+$$X[m]=X_1[m]+W^m_NX_2[m]+W^{2m}_NX_3[m]+\cdots+W^{(p-1)m}_NX_p[m]$$
 
-\[X[m+q]=X_1[m]+W^{(m+q)}_NX_2[m]+W^{2(m+q)}_NX_3[m]+\cdots+W^{(p-1)(m+q)}_NX_3[m]\]
+$$X[m+q]=X_1[m]+W^{(m+q)}_NX_2[m]+W^{2(m+q)}_NX_3[m]+\cdots+W^{(p-1)(m+q)}_NX_3[m]$$
 
-\[X[m+(p-1)+q]=X_1[m]+W^{(m+pq-q)}_NX_2[m]+W^{2(m+pq-q)}_NX_3[m]\\+\cdots+W^{(p-1)(m+pq-q)}_NX_3[m]
-\]
+$$X[m+(p-1)+q]=X_1[m]+W^{(m+pq-q)}_NX_2[m]+W^{2(m+pq-q)}_NX_3[m]$$
+$$+\cdots+W^{(p-1)(m+pq-q)}_NX_3[m]$$
 
 基 2 时间抽取 FFT 算法和基 4 时间抽取 FFT 算法是混合基算法的特例, 他们每级分解的基必须相同.
