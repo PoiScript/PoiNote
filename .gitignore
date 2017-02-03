@@ -1,6 +1,3 @@
-# Dolpbin
-.directory
-
-# Compiled
-*.html
-ltximg/
+*.*
+!.gitignore
+!*.org
