@@ -1,9 +1,6 @@
 #+TITLE: Line Integral
 #+AUTHOR: PoiScript
 #+LANGUAGE: en
-#+CATEGORY: Mathematics
-#+TAGS: Integral
-#+OPTIONS: tex:dvisvgm
 
 * Line Integral
 
