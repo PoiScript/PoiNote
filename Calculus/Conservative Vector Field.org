@@ -1,7 +1,3 @@
-#+TITLE: Conservative Vector Field
-#+AUTHOR: PoiScript
-#+LANGUAGE: en
-
 * Conservative Vector Field
 
 ** Definition

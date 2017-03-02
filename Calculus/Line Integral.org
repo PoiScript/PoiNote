@@ -1,14 +1,10 @@
-#+TITLE: Line Integral
-#+AUTHOR: PoiScript
-#+LANGUAGE: en
-
 * Line Integral
 
 ** First Kind
 
 *** Definition
 
-The *line integral* of $f$ along $L$: 
+The *line integral* of $f$ along $L$:
 
 \[\int_Lf(x,y)ds=\lim_{\lambda\rightarrow0}f(\xi_i,\eta_i)\delta s_i\]
 
@@ -86,8 +82,3 @@ Positively Oriented: if a curve is tracked out in a counter-clockwise direction.
 We can also use Green Theorem to find the area $A$ of region $D$:
 
 \[A=\iint_Ddxdy=\frac{1}{2}\oint_Lxdy-ydx\]
-
-
-
-
-

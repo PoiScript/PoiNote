@@ -1,7 +1,3 @@
-#+TITLE: Multiple Integral
-#+AUTHOR: PoiScript
-#+LANGUAGE: en
-
 * Multiple Integral
 
 ** Double Integral

@@ -1,7 +1,3 @@
-#+TITLE: Surface Integral
-#+AUTHOR: PoiScript
-#+LANGUAGE: en
-
 * Surface Integral
 
 ** Definition

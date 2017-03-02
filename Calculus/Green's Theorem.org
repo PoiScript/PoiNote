@@ -1,7 +1,3 @@
-#+TITLE: Green's Theorem
-#+AUTHOR: PoiScript
-#+LANGUAGE: en
-
 * Green Theorem
 
 Green Theorem is about the relationship between line integral(on closed paths) and double integral.
