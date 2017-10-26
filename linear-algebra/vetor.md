@@ -1,8 +1,27 @@
+A vector quantity has both magnitude and a direction in space.
+
+Coplanar vector are vectors lying a common plane.
+
+# Vector Alegra
+
+The vector addition obeys the commutative law and the associative law.
+
+Mulitiplicatin of a vector by scalars also obyes the associative and distributive lays. Two vector are said to be equal if thier difference is zero.
+
 # Direction Cosine
 
 \[\vec{a_r}=\frac{\vec{r}}{r}=\frac{\vec{a_x}r\cos\alpha+\vec{a_y}r\cos\beta+\vec{a_z}r\cos\gamma}{r}=\vec{a_x}\cos\alpha+\vec{a_y}\cos\beta+\vec{a_z}\cos\gamma\]
 
 # Dot Product
+
+The dot, or scalar, product is a scalar, as one of the names implies, and it obeys the commutative law.
+
+One of the most important applications of the dot product is that of finding the compoent of a vector in a given direction.
+
+> An example of using dot product in mechanics: a constant force $\vec{F}$ applied over a straight displacement $\vec{L}$ does an amount of work $\vec{F}\vec{L}\cos\theta$, which is more easily written $\vec{F}\cdot\vec{L}$.
+
+> Another example in magnetic fields: the total flux $\Psi$ crossing a surface of area $\vec{S}$ is given by $\vec{B}\vec{S}$ if the magnetic flux density $\vec{B}$ is prependicular to the surface and uniform over it.
+
 \[\vec{A}\cdot\vec{B}=|\vec{A}||\vec{B}|\cos\theta\]
 
 \[\vec{A}\cdot(\vec{B}+\vec{C})=\vec{A}\cdot \vec{B}+\vec{A}\cdot\vec{C}\]
@@ -12,8 +31,9 @@
     \vec{r}=\vec{a_x}x+\vec{a_y}y+\vec{a_z}z
 \end{cases}\]
 
-
 # Cross Product
+
+The direction of $\vec{A}\times\vec{B}$ is perpendicular to the plane containing $\vec{A}$ and $\vec{B}$ and is along one of the two possiable perpendicular which is in the direction of a right-handed screw as $\vec{A}$ is turned into $\vec{B}$.
 
 \[\vec{A}\times\vec{B}=|\vec{A}||\vec{B}|\sin\theta\]
 
@@ -49,7 +69,6 @@
 \end{cases}\]
 
 \[|\vec{A}|=\sqrt{A_x^2+A_y^2+A_z^2}\]
-
 
 \[\vec{A}\cdot\vec{B}=A_xB_x+A_yB_y+A_zB_z\]
 \[\vec{A}\times\vec{B}=\vec{a_x}(A_yB_z-A_zB_y)+\vec{a_y}(A_zB_x-A_xB_z)+\vec{a_z}(A_xB_y-A_yB_x)=
