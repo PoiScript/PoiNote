@@ -2,7 +2,6 @@ The electric flux density $\vec{D}$ is a vector and is a member of the "flux den
 
 In free space $\vec{D}$ is directly proportional to $\vec{E}$,
 
-\[\vec{D}=\epsilon_0\vec{E}\]
+$$\vec{D}=\epsilon_0\vec{E}$$
 
 > It does not seem that is should really necessary to introduce a new symbol, but there are a few reasons: First $\vec{D}$ is associated with the flux concept, which is an important new idea. Second the $\vec{D}$ fiedls we obtain will be a little simpler than the corresponding $\vec{E}$ fields because $\epsilon_0$ does not appear.
-
