@@ -11,7 +11,7 @@ Then the line integral is path independent in $G$, and the field $F$ is conserva
 Let $F=P(x,y)\vec{\imath}+Q(x,y)\vec{\jmath}$ be a field on a *connected and simply connected domain* whose component function have continuous *first partial derivatives*.
 Then $F$ is conservative *if and only if*
 
-\[\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}\]
+$$\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}$$
 
 ** Fundamental Theorem for Line Integrals
 
@@ -20,4 +20,4 @@ The fundamental theorem for line integrals also called *the gradient theorem*:
 Let $L$ be a smooth curve given by $\vec{r},a\leq t\leq b$, and suppose that $f$ is a function whose gradient vector, $\nabla f$, is continuous on $L$, let $\vec{F}=\nabla f$
 Then the line integral $\int_L\vec{F}\cdot d\vec{r}$ is *path independent* in $G$, and
 
-\[\int_L\vec{F}\cdot d\vec{r}=f(\vec{r}(b))-f(\vec{r}(a))\]
+$$\int_L\vec{F}\cdot d\vec{r}=f(\vec{r}(b))-f(\vec{r}(a))$$

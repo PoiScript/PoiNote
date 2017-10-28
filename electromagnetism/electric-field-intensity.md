@@ -2,5 +2,4 @@ If we consider one charge fixed in position, and move a second charge slowly aro
 
 Call the second charge a test charge $Q_t$. The force on it is given by Comlomb's law:
 
-\[E_t=\frac{F_t}{Q_1}=\frac{Q_1}{4\pi\epsilon_0R^2_{1t}}\vec{a}_{1t}\]
-
+$$E_t=\frac{F_t}{Q_1}=\frac{Q_1}{4\pi\epsilon_0R^2_{1t}}\vec{a}_{1t}$$
