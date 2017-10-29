@@ -1,4 +1,7 @@
-* Line Integral
+---
+title: 'Line Integral'
+path: '/calculus/line-integral.md'
+---
 
 ** First Kind
 

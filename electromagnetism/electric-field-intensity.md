@@ -1,3 +1,8 @@
+---
+title: 'Electric Field Intensity'
+path: '/electromagnetism/electric-field-intensity'
+---
+
 If we consider one charge fixed in position, and move a second charge slowly around, the second charge is displaying the existence of a force field that is associated with charge, $Q_1$.
 
 Call the second charge a test charge $Q_t$. The force on it is given by Comlomb's law:

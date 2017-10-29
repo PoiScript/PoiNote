@@ -1,3 +1,8 @@
+---
+title: "Gauss's Law"
+path: '/electromagnetism/gausss-law'
+---
+
 The electric flux passing throught any closed surface is equal to the total charge enclosed by the surface.
 
 $$\Psi=\int d\Psi=\oint\vec{D}_S\cdot\vec{S}$$

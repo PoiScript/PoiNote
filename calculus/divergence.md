@@ -1,6 +1,11 @@
+---
+title: 'Divergence'
+path: '/calculus/divergence'
+---
+
 In vector calculus, divergence is a vector operator that produces a scalar field giving the quantity of a vector field's source at each point. More technically, the divergence represents the volume density of the outward flux of a vector field from an infinitesimal volume around a given point.
 
-$$\text{div}\vec{A}=\int\limits_{\Delta\tau\rightarror0}\frac{\oint_S\vec{A}(r)\cdot d\vec{S}}{\Delta\tau}$$
+$$\text{div}\vec{A}=\int\limits_{\Delta\tau\rightarrow0}\frac{\oint_S\vec{A}(r)\cdot d\vec{S}}{\Delta\tau}$$
 
 div stands for divergence, divergence is a scalar.
 

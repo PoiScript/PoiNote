@@ -1,4 +1,7 @@
-* Green Theorem
+---
+title: 'Green's Theorem'
+path: '/calculus/greens-theorem'
+---
 
 Green Theorem is about the relationship between line integral(on closed paths) and double integral.
 
