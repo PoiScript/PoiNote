@@ -1,3 +1,8 @@
+---
+title: "Coulomb's Law"
+path: '/electromagnetism/coulombs-law'
+---
+
 The force between two very small objects separated in a vacuum or free space by a distance, which is large compared to their size, is proportional to the charge on each and inversely proportional to the square of the distance between them, or:
 
 $$\vec{F}=k\frac{Q_1Q_2}{R^2}$$

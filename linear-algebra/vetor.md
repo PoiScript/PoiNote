@@ -1,3 +1,8 @@
+---
+title: 'Vector'
+path: '/linear-algebra/vetor'
+---
+
 A vector quantity has both magnitude and a direction in space.
 
 Coplanar vector are vectors lying a common plane.

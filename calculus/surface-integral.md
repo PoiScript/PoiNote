@@ -1,4 +1,7 @@
-* Surface Integral
+---
+title: 'Surface Integral'
+path: '/calculus/surface-integral'
+---
 
 ** Definition
 

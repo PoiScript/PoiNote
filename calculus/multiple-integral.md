@@ -1,4 +1,7 @@
-* Multiple Integral
+---
+title: 'Multiple Integral'
+path: '/calculus/multiple-integral'
+---
 
 ** Double Integral
 
