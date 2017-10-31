@@ -1,6 +1,6 @@
 ---
 title: "Ampere's Circuital Law"
-path: '/electromagnetism/amperes-circuital-law'
+category: 'Electromagnetism'
 ---
 
 Ampere's circuital law states that the line intergal of $H$ about any closed path is exactly equal to the direct current enclosed by that path:

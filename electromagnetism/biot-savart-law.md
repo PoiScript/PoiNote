@@ -1,6 +1,6 @@
 ---
 title: 'Biot-Savart Law'
-path: '/electromagnetism/biot-savart-law'
+category: 'Electromagnetism'
 ---
 
 At any point $P$ the magnitude of the magnetic field intensity produced by the differential element proportional to the product of the current, the magnitude o the differential lenght, and the side of the angle lying between the filament and a line connecting the flament to the point $P$ at which the field is desired.

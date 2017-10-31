@@ -1,11 +1,11 @@
 ---
-title: 'Green's Theorem'
-path: '/calculus/greens-theorem'
+title: "Green's Theorem"
+category: 'Calculus'
 ---
 
 Green Theorem is about the relationship between line integral(on closed paths) and double integral.
 
-** Definition
+# Definition
 
 Let $L$ be a *positively oriented*, piecewise smooth, simple, closed curve and let $D$ be the region *enclosed by the curve*.
 If $P(x,y)$ and $Q(x,y)$ have *continuous first order partial derivatives* on $D$ then,

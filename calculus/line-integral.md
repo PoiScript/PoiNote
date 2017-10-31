@@ -1,11 +1,11 @@
 ---
 title: 'Line Integral'
-path: '/calculus/line-integral.md'
+category: 'Calculus'
 ---
 
-** First Kind
+# First Kind
 
-*** Definition
+## Definition
 
 The *line integral* of $f$ along $L$:
 
@@ -13,7 +13,7 @@ $$\int_Lf(x,y)ds=\lim_{\lambda\rightarrow0}f(\xi_i,\eta_i)\delta s_i$$
 
 The curve $L$ should be *smooth* ($\vec{r}(t)$ is continuous and $\vec{r}\neq0$ for all $t$)
 
-*** Calculate
+## Calculate
 
 To compute a line integral, you should convert everything to a parametric equations:
 
@@ -21,9 +21,9 @@ $$x=\varphi(t),\,y=\psi(t),\,\alpha\leq t\leq\beta$$
 
 $$\int_Lf(x,y)ds=\int^\beta_\alpha f\left[\phi(t)+\psi(t)\right]\sqrt{\phi'^2(t)+\psi'^2(t)dt}dt(\alpha<\beta)$$
 
-** Second Kind
+# Second Kind
 
-*** Definition
+## Definition
 
 The *line integral* of $f$ with respect to $x$:
 
@@ -43,19 +43,19 @@ $$\int_L\vec{F}(x,y)\cdot d\vec{r}$$
 
 $$\vec{F}(x,y)=P(x,y)\vec{i}+Q(x,y)\vec{j}\,d\vec{r}=dx\vec{i}+dy\vec{j}$$
 
-*** Property
+## Property
 
 If $L$ is any curve:
 
 $$\int_{L^-}\vec{F}(x,y)\cdot d\vec{r}=-\int_L\vec{F}(x,y)\cdot d\vec{r}$$
 
-*** Calculate
+## Calculate
 
 $$x=\varphi(t),\,y=\psi(t)$$
 
 $$\int_LP(x,y)dx+Q(x,y)dy=\int_\beta^\alpha\left\{P\left[\varphi(t),\psi(t)\right]\varphi'(t)+Q\left[\varphi(t),\psi(t)\right]\psi'(t)\right\}dt$$
 
-** Gradient Theorem
+# Gradient Theorem
 
 Fundamental Theorem of Calculus told us:
 
@@ -71,7 +71,7 @@ vector differential operator
 
 $$\nabla f=\frac{\partial f}{\partial x}\vec{\imath}+\frac{\partial f}{\partial y}\vec{\jmath}$$
 
-** Green Theorem
+# Green Theorem
 
 Green Theorem is about the relationship between line integral(on closed paths) and double integral.
 
