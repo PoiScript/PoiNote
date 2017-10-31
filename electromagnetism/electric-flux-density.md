@@ -1,6 +1,6 @@
 ---
 title: 'Electric Flux Denesity'
-path: '/electromagnetism/electric-flux-density'
+category: 'Electromagnetism'
 ---
 
 The electric flux density $\vec{D}$ is a vector and is a member of the "flux denesity" class of vector field, as opposed to the "force field" class, which includes the electric field intensity $\vec{E}$. The direction of $\vec{D}$ at a point is the direction of the flux lines at that point, and the magnitude is given by the number of flux lines crossing a surface normal to the lines divided by the surface area.

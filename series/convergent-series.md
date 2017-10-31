@@ -1,6 +1,6 @@
 ---
 title: 'Convergent Series'
-path: '/series/convergent-series'
+category: 'Series'
 ---
 
-** Definition
+# Definition

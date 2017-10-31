@@ -1,6 +1,6 @@
 ---
 title: "Coulomb's Law"
-path: '/electromagnetism/coulombs-law'
+category: 'Electromagnetism'
 ---
 
 The force between two very small objects separated in a vacuum or free space by a distance, which is large compared to their size, is proportional to the charge on each and inversely proportional to the square of the distance between them, or:

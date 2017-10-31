@@ -1,6 +1,6 @@
 ---
 title: 'Gradient'
-path: '/calculus/gradient'
+category: 'Calculus'
 ---
 
 $$\text{grad}\Phi=\vec{a_x}\frac{\partial\Phi}{\partial x}+\vec{a_y}\frac{\partial\Phi}{\partial y}+\vec{a_z}\frac{\partial\Phi}{\partial z}=\nabla\Phi$$

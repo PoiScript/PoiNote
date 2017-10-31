@@ -1,9 +1,9 @@
 ---
 title: 'Surface Integral'
-path: '/calculus/surface-integral'
+category: 'Calculus'
 ---
 
-** Definition
+# Definition
 
 The surface integral in which the surface $\Sigma$ is given by $f(x,y,z)$:
 

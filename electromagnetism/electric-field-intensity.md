@@ -1,6 +1,6 @@
 ---
 title: 'Electric Field Intensity'
-path: '/electromagnetism/electric-field-intensity'
+category: 'Electromagnetism'
 ---
 
 If we consider one charge fixed in position, and move a second charge slowly around, the second charge is displaying the existence of a force field that is associated with charge, $Q_1$.

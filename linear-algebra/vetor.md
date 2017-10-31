@@ -1,6 +1,6 @@
 ---
 title: 'Vector'
-path: '/linear-algebra/vetor'
+category: 'Linear Algebra'
 ---
 
 A vector quantity has both magnitude and a direction in space.

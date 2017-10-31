@@ -1,22 +1,22 @@
 ---
 title: 'Conservative Vector Field'
-path: '/calculus/conservative-vector-field'
+category: 'Calculus'
 ---
 
-** Definition
+# Definition
 
 Let $F$ be a vector field on an open region $G$ in space, and suppose that for any two point $A$ and $B$ in $L$,
 the line integral $\int_C\vec{F}\cdot d\vec{x}$ along a path $L$ from $A$ to $B$ is the same over all paths from $A$ to $B$.
 Then the line integral is path independent in $G$, and the field $F$ is conservative on $G$.
 
-** Condition
+# Condition
 
 Let $F=P(x,y)\vec{\imath}+Q(x,y)\vec{\jmath}$ be a field on a *connected and simply connected domain* whose component function have continuous *first partial derivatives*.
 Then $F$ is conservative *if and only if*
 
 $$\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}$$
 
-** Fundamental Theorem for Line Integrals
+# Fundamental Theorem for Line Integrals
 
 The fundamental theorem for line integrals also called *the gradient theorem*:
 
